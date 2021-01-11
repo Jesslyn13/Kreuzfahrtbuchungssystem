@@ -11,7 +11,6 @@ public class Cabin {
         this.hasWindow=hasWindow;
         this.size=size;
         calculateCost();
-
     }
 
     public void setBookedStatus(boolean isBooked) {
