@@ -16,13 +16,12 @@ public class Cabin {
             3,175,
             4,150,
             PRESIDENT_SUITE_KEY,15000);
-    // variables
+
     boolean booked;
     boolean hasWindow;
     int    size;
     int costPerDay;
 
-    // cabin configuration
     public Cabin(boolean hasWindow, int size) {
         this.hasWindow=hasWindow;
         this.size=size;
@@ -34,7 +33,7 @@ public class Cabin {
     }
 
     public void calculateCost() {
-        costPerDay=PRICE_PER_DAY.get(size); // default cost for a cabin simply depend on its size
+        costPerDay = PRICE_PER_DAY.get(size); // default cost for a cabin simply depend on its size
 
         if(hasWindow) {
             costPerDay *= OUTSIDE_CABIN_COST_MULTIPLIER;   // cabins with a window are more expensive by a fixed multiplier
