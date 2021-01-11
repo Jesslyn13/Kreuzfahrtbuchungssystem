@@ -18,6 +18,8 @@ public class Cabin {
                 booked=isBooked;
     }
 
+
+    // Cabin costs
     public void calculateCost() {
         switch (size) {
             case 1: costPerDay=250; break;
