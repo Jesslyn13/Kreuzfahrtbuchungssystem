@@ -4,7 +4,7 @@ public class Cabin {
 
     boolean booked;
     boolean hasWindow;
-    int size;
+    int    size;
     int costPerDay;
 
     public Cabin(boolean hasWindow, int size) {
@@ -14,18 +14,17 @@ public class Cabin {
     }
 
     public void setBookedStatus(boolean isBooked) {
-                booked=isBooked;
+        booked=isBooked;
     }
-
 
     // Cabin costs
     public void calculateCost() {
         switch (size) {
-            case 1: costPerDay=250; break;
-            case 2: costPerDay=200; break;
-            case 3: costPerDay=175; break;
-            case 4: costPerDay=150; break;
-            case PRESIDENT_SUITE: costPerDay=15000; break;
+            case 1 ->               costPerDay = 250;
+            case 2 ->               costPerDay = 200;
+            case 3 ->               costPerDay = 175;
+            case 4 ->               costPerDay = 150;
+            case PRESIDENT_SUITE -> costPerDay = 15000;
         }
         if(hasWindow) costPerDay*=1.4;
     }
