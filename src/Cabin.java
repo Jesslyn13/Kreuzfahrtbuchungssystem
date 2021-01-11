@@ -2,14 +2,13 @@ import java.util.Map;
 
 public class Cabin {
 
-    //President suite is assigned a "size" so it can simply be a part of the price map
 
-    static final int PRESIDENT_SUITE_KEY = 5;
     static final double OUTSIDE_CABIN_COST_MULTIPLIER = 1.4;
 
-    // This map sets up the size of cabins to correspond to a specific price
-    // President Suite can not be easily described like this, so it is set as a constant
+    //President suite is assigned a "size" so it can simply be a part of the price map
+    static final int PRESIDENT_SUITE_KEY = 5;
 
+    // Setting up a map so the size of cabins to correspond to a specific price
     static final Map<Integer,Integer> PRICE_PER_DAY = Map.of(
             1,250,
             2,200,
