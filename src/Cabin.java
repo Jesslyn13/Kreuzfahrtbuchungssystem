@@ -2,7 +2,6 @@ import java.util.Map;
 
 public class Cabin {
 
-    // variables
     static final int PRESIDENT_SUITE = 5;
     static final Map<Integer,Integer> PRICE_PER_DAY = Map.of(
             1,250,
@@ -11,7 +10,7 @@ public class Cabin {
             4,150,
             PRESIDENT_SUITE,15000);
 
-
+    // variables
     boolean booked;
     boolean hasWindow;
     int    size;
