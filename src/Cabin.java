@@ -17,7 +17,7 @@ public class Cabin {
     int    size;
     int costPerDay;
 
-    // Cabin configuration
+    // cabin configuration
     public Cabin(boolean hasWindow, int size) {
         this.hasWindow=hasWindow;
         this.size=size;
