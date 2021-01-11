@@ -7,17 +7,19 @@ public class Cabin {
     int    size;
     int costPerDay;
 
+    // Cabin configuration
     public Cabin(boolean hasWindow, int size) {
         this.hasWindow=hasWindow;
         this.size=size;
         calculateCost();
     }
 
+    // booked status
     public void setBookedStatus(boolean isBooked) {
         booked=isBooked;
     }
 
-    // Cabin costs
+    // cost calculator
     public void calculateCost() {
         switch (size) {
             case 1 ->               costPerDay = 250;
