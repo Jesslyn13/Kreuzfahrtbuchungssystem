@@ -1,6 +1,15 @@
+import java.util.Map;
+
 public class Cabin {
 
     static final int PRESIDENT_SUITE = 5;
+    static final Map<Integer,Integer> PRICE_PER_DAY = Map.of(
+            1,250,
+            2,200,
+            3,175,
+            4,150,
+            PRESIDENT_SUITE,15000);
+
 
     boolean booked;
     boolean hasWindow;
@@ -19,16 +28,12 @@ public class Cabin {
         booked=isBooked;
     }
 
-    // cost calculator
+    // Cabin costs
     public void calculateCost() {
-        switch (size) {
-            case 1 ->               costPerDay = 250;
-            case 2 ->               costPerDay = 200;
-            case 3 ->               costPerDay = 175;
-            case 4 ->               costPerDay = 150;
-            case PRESIDENT_SUITE -> costPerDay = 15000;
-        }
+        costPerDay=PRICE_PER_DAY.get(size);
         if(hasWindow) costPerDay*=1.4;
+
+
     }
 
 }
