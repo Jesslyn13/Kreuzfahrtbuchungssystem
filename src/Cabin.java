@@ -28,7 +28,6 @@ public class Cabin {
         calculateCost();
     }
 
-
     public void setBookedStatus(int guestsBooked) {
         this.guestsBooked = guestsBooked;
     }
