@@ -9,7 +9,7 @@ public class Cabin {
     static final int PRESIDENT_SUITE_KEY = 5;
 
     // Setting up a map so the size of cabins correspond to a specific price
-    static final Map<Integer,Integer> PRICE_PER_DAY = Map.of(
+    static final Map<Integer,Integer> PRICE_PER_DAY_PER_GUEST = Map.of(
             1,250,
             2,200,
             3,175,
@@ -18,13 +18,13 @@ public class Cabin {
 
     boolean hasWindow;
     int guestsBooked;
-    int size;
+    int guestCapacity;
     int costPerDay;
 
-    public Cabin(boolean hasWindow, int size, int guestCount) {
+    public Cabin(boolean hasWindow, int guestCapacity, int guestCount) {
         this.guestsBooked=guestCount;
         this.hasWindow=hasWindow;
-        this.size=size;
+        this.guestCapacity = guestCapacity;
         calculateCost();
     }
 
@@ -34,7 +34,7 @@ public class Cabin {
     }
 
     public void calculateCost() {
-        costPerDay = PRICE_PER_DAY.get(size); // default cost for a cabin simply depend on its size
+        costPerDay = PRICE_PER_DAY.get(guestCapacity); // default cost for a cabin simply depend on its size
         costPerDay *= guestsBooked;
 
         if(hasWindow) {
