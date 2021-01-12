@@ -25,7 +25,6 @@ public class Cabin {
         this.guestsBooked=guestCount;
         this.hasWindow=hasWindow;
         this.guestCapacity = guestCapacity;
-//        BLUB
         calculateCost();
     }
 
