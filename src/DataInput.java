@@ -13,7 +13,7 @@ public class DataInput {
     public void CheckIn() throws ParseException {
 
         System.out.println("Hallo Herzlich Willkommen auf der Titanic 2");
-        System.out.println("Mit wie vielen Persoen kommen sie an Bord?");
+        System.out.println("Mit wie vielen Personen kommen sie an Bord?");
         int people = scanner.nextInt();
 
         System.out.println("Wie viele Tage soll ihre Reise dauern?");
