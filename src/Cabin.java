@@ -3,6 +3,7 @@ import java.util.Map;
 
 public class Cabin {
 
+
     static final double OUTSIDE_CABIN_COST_MULTIPLIER = 1.4;
 
     // President suite is assigned a "size" so it can simply be a part of the price map

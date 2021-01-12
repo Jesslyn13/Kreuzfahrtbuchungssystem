@@ -1,4 +1,3 @@
-import java.text.ParseException;
 import java.util.Scanner;
 
 public class DataInput {
@@ -10,7 +9,7 @@ public class DataInput {
 
     Boolean wantWindow;
 
-    public void CheckIn() throws ParseException {
+    public void CheckIn() {
 
         System.out.println("Hallo Herzlich Willkommen auf der Titanic 2");
         System.out.println("Mit wie vielen Persoen kommen sie an Bord?");
