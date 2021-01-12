@@ -34,7 +34,7 @@ public class Cabin {
     }
 
     public void calculateCost() {
-        costPerDay = PRICE_PER_DAY.get(guestCapacity); // default cost for a cabin simply depend on its size
+        costPerDay = PRICE_PER_DAY_PER_GUEST.get(guestCapacity); // default cost for a cabin simply depend on its size
         costPerDay *= guestsBooked;
 
         if(hasWindow) {
