@@ -21,8 +21,7 @@ public class Cabin {
     int guestCapacity;
     int costPerDay;
 
-    public Cabin(boolean hasWindow, int guestCapacity, int guestCount) {
-        this.guestsBooked=guestCount;
+    public Cabin(boolean hasWindow, int guestCapacity) {
         this.hasWindow=hasWindow;
         this.guestCapacity = guestCapacity;
         calculateCost();
