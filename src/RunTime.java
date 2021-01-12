@@ -17,8 +17,10 @@ public class RunTime {
 
         System.out.println("Hallo Herzlich Willkommen auf der Titanic 2");
 
-        // number of people
-      //  System.out.println("Wie viele Personen sind?");
+        System.out.println("Hallo Freddy");
+
+       // number of people
+       // System.out.println("Wie viele Personen sind?");
        // int people = scanner.nextInt();
 
 
@@ -34,8 +36,7 @@ public class RunTime {
      //   System.out.println("Möchten sie eine Außenkabine?");
       //  String typeOfCabin = scanner.nextLine();
 
-
-        // calculation of the total cost
+       // calculation of the total cost
        // System.out.println("Ihr Aufenthalt vom " + startDateOfStay + " bis zum " + endDateOfStay + "  bei uns kostet insgesammt €.");
 
         System.out.println("Die Titanic 2 wünscht eine sichchere Reise - Gemeinsam gehen wir nicht wieder unter :)");
