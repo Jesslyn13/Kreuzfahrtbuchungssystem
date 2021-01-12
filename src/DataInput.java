@@ -26,7 +26,7 @@ public class DataInput {
             wantWindow = false;
         }
 
-        System.out.println("Ihr Aufenthalt bei uns kostet insgesammt €.");
+        System.out.println("Ihr Aufenthalt bei uns kostet insgesamt €.");
         System.out.println("Die Titanic 2 wünscht eine sichchere Reise - Gemeinsam gehen wir nicht wieder unter :)");
 
         scanner.close();
