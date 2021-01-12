@@ -12,6 +12,7 @@ public class RunTime {
 
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         Date date = dateFormat.parse("10-01-2021");
+        System.out.println("Hex");
 
 
         System.out.println("Hallo Herzlich Willkommen auf der Titanic 2");
