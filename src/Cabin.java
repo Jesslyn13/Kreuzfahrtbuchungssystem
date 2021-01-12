@@ -30,7 +30,7 @@ public class Cabin {
 
 
     public void setBookedStatus(int guestsBooked) {
-        guestsBooked = this.guestsBooked;
+        this.guestsBooked = guestsBooked;
     }
 
     public void calculateCost() {
