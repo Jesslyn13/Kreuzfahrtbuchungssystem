@@ -6,8 +6,7 @@ public class ShipLogic {
         // President suite is assigned a "size" so it can simply be a part of the price map
          final int PRESIDENT_SUITE_KEY = 5;
 
-        ship[401] = new Cabin(true, PRESIDENT_SUITE_KEY);
-        ship[404] = new Cabin(true, PRESIDENT_SUITE_KEY);
+
 
         for(int i = 0; i<60 ; i++) {
         ship[i] = new Cabin(true, 1);
@@ -41,7 +40,7 @@ public class ShipLogic {
         }
 
         ship[401] = new Cabin(true, PRESIDENT_SUITE_KEY);
-        ship[404] = new Cabin(true, PRESIDENT_SUITE_KEY);
+        ship[402] = new Cabin(true, PRESIDENT_SUITE_KEY);
 
 
 
