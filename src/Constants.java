@@ -13,7 +13,7 @@ public interface Constants {
     DateFormat DATE_FORMAT = new SimpleDateFormat("dd.MM.yyyy");
 
     // Setting up a map so the size of cabins correspond to a specific price
-    static final Map<Integer, Integer> PRICE_PER_DAY_PER_GUEST = Map.of(
+    Map<Integer, Integer> PRICE_PER_DAY_PER_GUEST = Map.of(
             1, 250,
             2, 200,
             3, 175,
