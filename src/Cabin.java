@@ -1,6 +1,6 @@
 import java.util.Map;
 
-public class Cabin implements Constants {
+public class Cabin {
 
     TimeSpan[] bookedTimes = new TimeSpan[1000];
     boolean hasWindow;
@@ -22,11 +22,11 @@ public class Cabin implements Constants {
     }
 
     public void calculateCost() {
-        costPerDay = PRICE_PER_DAY_PER_GUEST.get(guestCapacity); // Default cost for a cabin simply depend on its size
+        costPerDay = Constants.PRICE_PER_DAY_PER_GUEST.get(guestCapacity); // Default cost for a cabin simply depend on its size
         costPerDay *= guestsBooked;
 
         if (hasWindow) {
-            costPerDay *= OUTSIDE_CABIN_COST_MULTIPLIER;   // Cabins with a window are more expensive by a fixed multiplier
+            costPerDay *= Constants.OUTSIDE_CABIN_COST_MULTIPLIER;   // Cabins with a window are more expensive by a fixed multiplier
         }
     }
 

@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class TimeSpan implements Constants {
+public class TimeSpan{
 
     // Date formatting will be used to store the dates at which a cabin is booked
     final Date startDate;

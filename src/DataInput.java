@@ -2,7 +2,7 @@ import java.text.ParseException;
 import java.util.Date;
 import java.util.Scanner;
 
-public class DataInput implements Constants{
+public class DataInput{
 
     Scanner scanner = new Scanner(System.in);
 
@@ -10,10 +10,10 @@ public class DataInput implements Constants{
 
         System.out.println("Herzlich Willkommen auf der Titanic 2");
         System.out.println("Wann beginnen sie ihre Reise? dd.mm.yyyy");
-        Date dateOfArrival = DATE_FORMAT.parse(scanner.nextLine());
+        Date dateOfArrival = Constants.DATE_FORMAT.parse(scanner.nextLine());
 
         System.out.println("Wann hört ihre Reise auf? dd.mm.yyyy");
-        Date dateOfDeparture = DATE_FORMAT.parse(scanner.nextLine());
+        Date dateOfDeparture = Constants.DATE_FORMAT.parse(scanner.nextLine());
 
         System.out.println("Möchten sie eine Außenkabine?");
         String typeOfCabin = scanner.next();
