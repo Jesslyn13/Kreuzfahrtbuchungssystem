@@ -2,7 +2,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Map;
 
-public interface Constants {
+public interface Constants<cabinTypes> {
 
     // Cabins with a window are more expensive by this multiplier
     double OUTSIDE_CABIN_COST_MULTIPLIER = 1.4;
@@ -20,16 +20,34 @@ public interface Constants {
             4, 150,
             PRESIDENT_SUITE_KEY, 15000);
 
-    int INNER_FOUR_PERSON_CABIN_COUNT = 40;
-    int OUTER_FOUR_PERSON_CABIN_COUNT = 60;
-    int INNER_THREE_PERSON_CABIN_COUNT = 40;
-    int OUTER_THREE_PERSON_CABIN_COUNT = 60;
-    int INNER_TWO_PERSON_CABIN_COUNT = 40;
-    int OUTER_TWO_PERSON_CABIN_COUNT = 60;
-    int INNER_ONE_PERSON_CABIN_COUNT = 40;
-    int OUTER_ONE_PERSON_CABIN_COUNT = 60;
-    int PRESIDENT_SUITE_COUNT = 2;
 
+    CabinType[] CABIN_TYPES = {
+            new CabinType(1,true,60),
+            new CabinType(1,false,40),
+
+            new CabinType(2,true,60),
+            new CabinType(2,false,40),
+
+            new CabinType(3,true,60),
+            new CabinType(3,false,40),
+
+            new CabinType(4,true,60),
+            new CabinType(4,false,40),
+
+            new CabinType(PRESIDENT_SUITE_KEY,true,2)};
+
+    int TOTAL_CABIN_COUNT = 402;
+
+
+    // int INNER_FOUR_PERSON_CABIN_COUNT = 40;
+    // int OUTER_FOUR_PERSON_CABIN_COUNT = 60;
+    // int INNER_THREE_PERSON_CABIN_COUNT = 40;
+    // int OUTER_THREE_PERSON_CABIN_COUNT = 60;
+    // int INNER_TWO_PERSON_CABIN_COUNT = 40;
+    // int OUTER_TWO_PERSON_CABIN_COUNT = 60;
+    // int INNER_ONE_PERSON_CABIN_COUNT = 40;
+    // int OUTER_ONE_PERSON_CABIN_COUNT = 60;
+    // int PRESIDENT_SUITE_COUNT = 2;
 }
 
 

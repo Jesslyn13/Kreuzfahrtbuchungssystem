@@ -2,7 +2,7 @@ import java.util.Map;
 
 public class Cabin implements Constants {
 
-    TimeSpan[] bookedTimes;
+    TimeSpan[] bookedTimes = new TimeSpan[1000];
     boolean hasWindow;
     int guestsBooked;
     int guestCapacity;
