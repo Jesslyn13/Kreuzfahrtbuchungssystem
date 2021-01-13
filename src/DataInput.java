@@ -2,7 +2,7 @@ import java.text.ParseException;
 import java.util.Date;
 import java.util.Scanner;
 
-public class DataInput {
+public class DataInput implements Constants{
 
     Date date;
 
@@ -26,10 +26,10 @@ public class DataInput {
             System.out.println("Es können nur min. 1/max. 4 Personen in ein Zimmer. Wenn sie mehr Zimmer benötigen, Buchen sie diese bitte einzelen!");
 
         System.out.println("Wann beginnen sie ihre Reise?");
-        String dateOfArrival = new DataInput().scanner.nextLine();
+        Date dateOfArrival = DATE_FORMAT.parse(scanner.nextLine());
 
         System.out.println("Wann hört ihre Reise auf?");
-        String dateOfDeparture = new DataInput().scanner.nextLine();
+        Date dateOfDeparture = DATE_FORMAT.parse(scanner.nextLine());
 
         System.out.println("Möchten sie eine Außenkabine?");
         String typeOfCabin = scanner.next();
