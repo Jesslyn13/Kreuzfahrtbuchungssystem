@@ -1,30 +1,43 @@
+import java.text.ParseException;
+import java.util.Date;
 import java.util.Scanner;
 
 public class DataInput {
 
-    // DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-    // Date date = dateFormat.parse("10-01-2021");
+    Date date;
+
+    {
+        try {
+            date = Constants.DATE_FORMAT.parse("10.01.2021");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
 
     Scanner scanner = new Scanner(System.in);
 
-    Boolean wantWindow;
 
     public void CheckIn(ShipLogic myLogic) {
 
         System.out.println("Herzlich Willkommen auf der Titanic 2");
         System.out.println("Mit wie vielen Personen kommen sie an Bord?");
         int people = scanner.nextInt();
+        if (!(people >= 1 && people <= 4))
+            System.out.println("Es können nur min. 1/max. 4 Personen in ein Zimmer. Wenn sie mehr Zimmer benötigen, Buchen sie diese bitte einzelen!");
 
-        System.out.println("Wie viele Tage soll ihre Reise dauern?");
-        int duritationOfStay = scanner.nextInt();
+        System.out.println("Wann beginnen sie ihre Reise?");
+        String dateOfArrival = new DataInput().scanner.nextLine();
+
+        System.out.println("Wann hört ihre Reise auf?");
+        String dateOfDeparture = new DataInput().scanner.nextLine();
 
         System.out.println("Möchten sie eine Außenkabine?");
         String typeOfCabin = scanner.next();
-        if (typeOfCabin.equalsIgnoreCase("Ja")) {
-            wantWindow = true;
-        } else {
-            wantWindow = false;
-        }
+        boolean wantWindow = typeOfCabin.equalsIgnoreCase("Ja");
+
+        new Cabin(wantWindow, people);
+
+
 
         System.out.println("Ihr Aufenthalt bei uns kostet insgesamt €.");
         System.out.println("Die Titanic 2 wünscht eine sichere Reise - Gemeinsam gehen wir nicht wieder unter:)");

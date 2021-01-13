@@ -8,3 +8,12 @@ public class RunTime {
         new DataInput().CheckIn(SL);
     }
 }
+
+/*
+
+ - User Input in Kabinliste
+ - Start und Enddatum übergeben
+ - (GUI)
+ - Fehlersuche
+
+ */
