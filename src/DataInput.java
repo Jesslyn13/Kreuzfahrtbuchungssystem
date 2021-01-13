@@ -4,18 +4,7 @@ import java.util.Scanner;
 
 public class DataInput implements Constants{
 
-    Date date;
-
-    {
-        try {
-            date = Constants.DATE_FORMAT.parse("10.01.2021");
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-    }
-
     Scanner scanner = new Scanner(System.in);
-
 
     public void CheckIn(ShipLogic myLogic) throws ParseException {
 
