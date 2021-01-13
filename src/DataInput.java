@@ -9,7 +9,7 @@ public class DataInput {
 
     Boolean wantWindow;
 
-    public void CheckIn() {
+    public void CheckIn(ShipLogic myLogic) {
 
         System.out.println("Herzlich Willkommen auf der Titanic 2");
         System.out.println("Mit wie vielen Personen kommen sie an Bord?");

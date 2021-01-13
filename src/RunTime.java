@@ -4,6 +4,7 @@ public class RunTime {
 
     public static void main(String[] args) throws ParseException {
 
-        new DataInput().CheckIn();
+        ShipLogic SL = new ShipLogic();
+        new DataInput().CheckIn(SL);
     }
 }
