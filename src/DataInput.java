@@ -11,14 +11,14 @@ public class DataInput {
 
     public void CheckIn() {
 
-        System.out.println("Hallo Herzlich Willkommen auf der Titanic 2");
-        System.out.println("Mit wie vielen Persoen kommen sie an Bord?");
+        System.out.println("Herzlich Willkommen auf der Titanic 2");
+        System.out.println("Mit wie vielen Personen kommen sie an Bord?");
         int people = scanner.nextInt();
 
         System.out.println("Wie viele Tage soll ihre Reise dauern?");
         int duritationOfStay = scanner.nextInt();
 
-        System.out.println("Möchten sie eine Außenkabine? ");
+        System.out.println("Möchten sie eine Außenkabine?");
         String typeOfCabin = scanner.next();
         if (typeOfCabin.equalsIgnoreCase("Ja")) {
             wantWindow = true;
@@ -26,8 +26,8 @@ public class DataInput {
             wantWindow = false;
         }
 
-        System.out.println("Ihr Aufenthalt bei uns kostet insgesammt €.");
-        System.out.println("Die Titanic 2 wünscht eine sichchere Reise - Gemeinsam gehen wir nicht wieder unter :)");
+        System.out.println("Ihr Aufenthalt bei uns kostet insgesamt €.");
+        System.out.println("Die Titanic 2 wünscht eine sichere Reise - Gemeinsam gehen wir nicht wieder unter:)");
 
         scanner.close();
     }
