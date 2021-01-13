@@ -40,7 +40,6 @@ public class ShipLogic implements Constants{
         }
         index+=OUTER_FOUR_PERSON_CABIN_COUNT;
 
-
         for(int i = index; i<index+INNER_FOUR_PERSON_CABIN_COUNT ; i++) {
             ship[i] = new Cabin(false, 4);
         }

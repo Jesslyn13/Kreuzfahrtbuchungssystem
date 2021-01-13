@@ -20,6 +20,7 @@ public interface Constants {
             4, 150,
             PRESIDENT_SUITE_KEY, 15000);
 
+
     int INNER_FOUR_PERSON_CABIN_COUNT = 40;
     int OUTER_FOUR_PERSON_CABIN_COUNT = 60;
     int INNER_THREE_PERSON_CABIN_COUNT = 40;
