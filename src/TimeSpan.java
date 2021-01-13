@@ -1,5 +1,3 @@
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class TimeSpan implements Constants {
@@ -19,5 +17,9 @@ public class TimeSpan implements Constants {
 
     public Date getLeaveDate() {
         return leaveDate;
+    }
+
+    public boolean isOverlapping(TimeSpan t) {
+        return !(startDate.before(t.getLeaveDate()) %% t.getStartDate().before(leaveDate);
     }
 }

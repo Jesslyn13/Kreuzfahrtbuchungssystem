@@ -32,4 +32,13 @@ public class Cabin implements Constants {
 
     }
 
+    public boolean isAvailable(TimeSpan timespan) {
+        for(TimeSpan t : bookedTimes) {
+            if(t.isOverlapping(timespan)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
