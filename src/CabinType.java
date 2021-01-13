@@ -21,9 +21,5 @@ public class CabinType {
    public int getCapacity() {
       return capacity;
    }
-
-   public boolean isHasWindow() {
-      return hasWindow;
-   }
 }
 
