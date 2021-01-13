@@ -17,7 +17,7 @@ public class DataInput implements Constants{
     Scanner scanner = new Scanner(System.in);
 
 
-    public void CheckIn(ShipLogic myLogic) {
+    public void CheckIn(ShipLogic myLogic) throws ParseException {
 
         System.out.println("Herzlich Willkommen auf der Titanic 2");
         System.out.println("Mit wie vielen Personen kommen sie an Bord?");
