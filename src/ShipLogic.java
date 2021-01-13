@@ -13,5 +13,17 @@ public class ShipLogic implements Constants {
 
     }
 
+    public Cabin[] getFreeCabins(TimeSpan t) {
+        Cabin[] freeCabins = new Cabin[TOTAL_CABIN_COUNT];
+        int index = 0;
+        for(Cabin c : myShip) {
+            if(c.isAvailable(t)) {
+                freeCabins[index] = c;
+                index++;
+            }
+        }
+        return freeCabins;
+    }
+
 
 }
