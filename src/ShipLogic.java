@@ -3,43 +3,52 @@ public class ShipLogic implements Constants{
 
     public static void generateShip() {
 
-        for(int i = 0; i<60 ; i++) {
+        int index=0;
+
+        for(int i = index; i<OUTER_ONE_PERSON_CABIN_COUNT ; i++) {
         ship[i] = new Cabin(true, 1);
         }
+        index+=OUTER_ONE_PERSON_CABIN_COUNT;
 
-        for(int i = 60; i<101 ; i++) {
+        for(int i = index; i<index+INNER_ONE_PERSON_CABIN_COUNT ; i++) {
             ship[i] = new Cabin(false, 1);
         }
+        index+=INNER_ONE_PERSON_CABIN_COUNT;
 
-        for(int i = 101; i<141 ; i++) {
+        for(int i = index; i<index+OUTER_TWO_PERSON_CABIN_COUNT ; i++) {
             ship[i] = new Cabin(true, 2);
         }
-        for(int i = 141; i<201 ; i++) {
+        index+=OUTER_TWO_PERSON_CABIN_COUNT;
+
+        for(int i = index; i<index+INNER_TWO_PERSON_CABIN_COUNT ; i++) {
             ship[i] = new Cabin(false, 2);
         }
+        index+=INNER_TWO_PERSON_CABIN_COUNT;
 
-        for(int i = 201; i<241 ; i++) {
+        for(int i = index; i<index+OUTER_THREE_PERSON_CABIN_COUNT ; i++) {
             ship[i] = new Cabin(true, 3);
         }
+        index+=OUTER_THREE_PERSON_CABIN_COUNT;
 
-        for(int i = 241; i<301 ; i++) {
+        for(int i = index; i<index+INNER_THREE_PERSON_CABIN_COUNT ; i++) {
             ship[i] = new Cabin(false, 3);
         }
+        index+=INNER_THREE_PERSON_CABIN_COUNT;
 
-        for(int i = 301; i<341 ; i++) {
+        for(int i = index; i<index+OUTER_FOUR_PERSON_CABIN_COUNT ; i++) {
             ship[i] = new Cabin(true, 4);
         }
+        index+=OUTER_FOUR_PERSON_CABIN_COUNT;
 
-        for(int i = 341; i<401 ; i++) {
+
+        for(int i = index; i<index+INNER_FOUR_PERSON_CABIN_COUNT ; i++) {
             ship[i] = new Cabin(false, 4);
         }
+        index+=INNER_FOUR_PERSON_CABIN_COUNT;
 
-        ship[401] = new Cabin(true, PRESIDENT_SUITE_KEY);
-        ship[402] = new Cabin(true, PRESIDENT_SUITE_KEY);
-
-
-
-
+        for(int i = index; i<index+PRESIDENT_SUITE_COUNT ; i++) {
+            ship[i] = new Cabin(true, PRESIDENT_SUITE_KEY);
+        }
     }
 
 
