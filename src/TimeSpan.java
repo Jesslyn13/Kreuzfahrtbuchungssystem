@@ -20,6 +20,6 @@ public class TimeSpan implements Constants {
     }
 
     public boolean isOverlapping(TimeSpan t) {
-        return !(startDate.before(t.getLeaveDate()) %% t.getStartDate().before(leaveDate);
+        return !(startDate.before(t.getLeaveDate()) && t.getStartDate().before(leaveDate));
     }
 }
