@@ -37,8 +37,6 @@ public class DataInput {
 
         new Cabin(wantWindow, people);
 
-
-
         System.out.println("Ihr Aufenthalt bei uns kostet insgesamt €.");
         System.out.println("Die Titanic 2 wünscht eine sichere Reise - Gemeinsam gehen wir nicht wieder unter:)");
 
