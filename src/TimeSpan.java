@@ -2,10 +2,9 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class TimeSpan {
+public class TimeSpan implements Constants {
 
     // Date formatting will be used to store the dates at which a cabin is booked
-    static final DateFormat DATE_FORMAT = new SimpleDateFormat("dd.MM.yyyy");
     final Date startDate;
     final Date leaveDate;
 

@@ -1,12 +1,7 @@
-public class ShipLogic {
+public class ShipLogic implements Constants{
     static Cabin[] ship = new Cabin[402];
 
     public static void generateShip() {
-
-        // President suite is assigned a "size" so it can simply be a part of the price map
-         final int PRESIDENT_SUITE_KEY = 5;
-
-
 
         for(int i = 0; i<60 ; i++) {
         ship[i] = new Cabin(true, 1);
@@ -45,7 +40,6 @@ public class ShipLogic {
 
 
     }
-
 
 
 }
