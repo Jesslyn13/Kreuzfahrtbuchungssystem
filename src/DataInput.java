@@ -23,7 +23,7 @@ public class DataInput {
         System.out.println("Mit wie vielen Personen kommen sie an Bord?");
         int people = scanner.nextInt();
         if (!(people >= 1 && people <= 4))
-            System.out.println("Es können nur min. 1/max. 4 Personen in ein Zimmer. Wenn sie mehr Zimmer benötigen, Buchen sie diese bitte einzelen!");
+            System.out.println("Es können nur min. 1/max. 4 Personen in ein Zimmer. Wenn sie mehr Zimmer benötigen, buchen sie diese bitte einzelen!");
 
         System.out.println("Wann beginnen sie ihre Reise?");
         String dateOfArrival = new DataInput().scanner.nextLine();
