@@ -51,7 +51,12 @@ public class DataInput {
 
             int roomType = scanner.nextInt();
 
-            filteredList = myLogic.filterBySize(filteredList, roomType);
+            if(roomType!=5) {
+                filteredList = myLogic.filterBySize(filteredList,roomType);
+            }
+            else {
+                filteredList = myLogic.filterBySize(filteredList, Constants.PRESIDENT_SUITE_KEY);
+            }
 
 
             if (roomType == 1 || roomType == 2 || roomType == 3 || roomType == 4) {
@@ -60,7 +65,7 @@ public class DataInput {
                 String typeOfCabin = scanner.next();
                 wantWindow = typeOfCabin.equalsIgnoreCase("Ja");
 
-            } else if (roomType == Constants.PRESIDENT_SUITE_KEY) {
+            } else if (roomType == 5) {
                 wantWindow = true;
                 //TODO: Dialog falls keinePräsidentensuite
                 System.out.println("In die Präsidentensuit können maximal 10 Personen!");
@@ -73,8 +78,6 @@ public class DataInput {
                 System.out.println("No cabins with selected properties remaining.");
                 return;
             }
-
-            System.out.println(Arrays.asList(filteredList).contains(null));
 
             filteredList = myLogic.filterByWindow(filteredList, wantWindow);
 

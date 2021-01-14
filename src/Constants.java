@@ -28,7 +28,7 @@ public interface Constants<cabinTypes> {
     int OUTER_TWO_PERSON_CABIN_COUNT = 60;
     int INNER_ONE_PERSON_CABIN_COUNT = 40;
     int OUTER_ONE_PERSON_CABIN_COUNT = 60;
-    int PRESIDENT_SUITE_COUNT = 2;
+    int PRESIDENT_SUITE_COUNT = 1;
 
 
     CabinType[] CABIN_TYPES = {
