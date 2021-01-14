@@ -1,4 +1,3 @@
-import java.sql.Time;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.Scanner;
@@ -79,8 +78,8 @@ public class DataInput {
 
             Cabin chosenCabin = filteredList[0];
             chosenCabin.setBookedGuests(people);
-            chosenCabin.setBookedTimes(new TimeSpan(dateOfArrival,dateOfDeparture));
-            int cost = chosenCabin.calculateTotalCost();
+            chosenCabin.addBookingEntry(new TimeSpan(dateOfArrival,dateOfDeparture));
+            int cost = chosenCabin.calculateTotalCost(plannedTimeSpan);
 
             System.out.println("Ihr Aufenthalt bei uns kostet insgesamt €.");
 

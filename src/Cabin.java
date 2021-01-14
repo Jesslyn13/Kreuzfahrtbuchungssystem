@@ -1,3 +1,5 @@
+import java.time.temporal.ChronoUnit;
+
 public class Cabin {
 
     TimeSpan[] bookedTimes = new TimeSpan[1000];
@@ -15,8 +17,8 @@ public class Cabin {
         this.guestsBooked = guestsBooked;
     }
 
-    public int calculateTotalCost() {
-
+    public int calculateTotalCost(TimeSpan t) {
+        return calculateCostPerDay() * (int) t.getDuration();
     }
 
     public int calculateCostPerDay() {
@@ -29,7 +31,7 @@ public class Cabin {
         return costPerDay;
     }
 
-    public void setBookedTimes(TimeSpan t) {
+    public void addBookingEntry(TimeSpan t) {
         bookedTimes[bookingEntryCount] = t;
         bookingEntryCount++;
     }

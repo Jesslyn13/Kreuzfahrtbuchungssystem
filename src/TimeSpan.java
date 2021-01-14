@@ -1,3 +1,5 @@
+import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 public class TimeSpan{
@@ -18,6 +20,11 @@ public class TimeSpan{
     public Date getLeaveDate() {
         return leaveDate;
     }
+
+    public long getDuration() {
+        return ChronoUnit.DAYS.between(
+            startDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(),
+            leaveDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());}
 
     public boolean isOverlapping(TimeSpan t) {
         return !(startDate.before(t.getLeaveDate()) && t.getStartDate().before(leaveDate));
