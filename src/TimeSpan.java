@@ -3,8 +3,8 @@ import java.util.Date;
 public class TimeSpan{
 
     // Date formatting will be used to store the dates at which a cabin is booked
-    final Date startDate;
-    final Date leaveDate;
+    private final Date startDate;
+    private final Date leaveDate;
 
     public TimeSpan(Date startDate, Date leaveDate) {
         this.startDate = startDate;

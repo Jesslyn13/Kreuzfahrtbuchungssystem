@@ -1,8 +1,7 @@
 public class CabinType {
-   int capacity;
-   int count;
-   String identifier;
-   boolean hasWindow;
+   private final int capacity;
+   private final int count;
+   private final boolean hasWindow;
 
    public CabinType(int capacity, boolean hasWindow, int count) {
       this.count = count;

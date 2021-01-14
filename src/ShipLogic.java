@@ -12,16 +12,44 @@ public class ShipLogic{
         }
     }
 
-    public Cabin[] getFreeCabins(TimeSpan t) {
-        Cabin[] freeCabins = new Cabin[Constants.TOTAL_CABIN_COUNT];
+    public Cabin[] filterByTimeSpan(Cabin[] cabins, TimeSpan t) {
+        Cabin[] matchingCabins = new Cabin[Constants.TOTAL_CABIN_COUNT];
         int index = 0;
-        for(Cabin c : myShip) {
+        for(Cabin c : cabins) {
             if(c.isAvailable(t)) {
-                freeCabins[index] = c;
+                matchingCabins[index] = c;
                 index++;
             }
         }
-        return freeCabins;
+        return matchingCabins;
+    }
+
+    public Cabin[] filterBySize(Cabin[] cabins, int size) {
+        Cabin[] matchingCabins = new Cabin[Constants.TOTAL_CABIN_COUNT];
+        int index = 0;
+        for(Cabin c : cabins) {
+            if(c.getCapacity()==size) {
+                matchingCabins[index] = c;
+                index++;
+            }
+        }
+        return matchingCabins;
+    }
+
+    public Cabin[] filterByWindow(Cabin[] cabins, boolean hasWindow) {
+        Cabin[] matchingCabins = new Cabin[Constants.TOTAL_CABIN_COUNT];
+        int index = 0;
+        for(Cabin c : cabins) {
+            if(c.hasWindow()) {
+                matchingCabins[index] = c;
+                index++;
+            }
+        }
+        return matchingCabins;
+    }
+
+    public Cabin[] getCabins() {
+        return myShip;
     }
 
     //TODO: Add more filter methods

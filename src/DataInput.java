@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class DataInput{
 
-    Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
 
     public void CheckIn(ShipLogic myLogic) throws ParseException {
 
