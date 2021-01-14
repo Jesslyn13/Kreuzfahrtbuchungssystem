@@ -6,7 +6,7 @@ public class DataInput {
 
     private final Scanner scanner = new Scanner(System.in);
 
-    boolean wantWindow;
+    private boolean wantWindow;
 
     public void CheckIn(ShipLogic myLogic) throws ParseException {
 
@@ -24,23 +24,23 @@ public class DataInput {
 
         System.out.print("1 - Einzelzimmer");
         if(myLogic.filterBySize(myLogic.getCabins(), 1)[0]==null) System.out.print(" -- Ausgebucht");
-        System.out.println("");
+        System.out.println();
 
         System.out.print("2 - Doppelzimmer");
         if(myLogic.filterBySize(myLogic.getCabins(), 2)[0]==null) System.out.print(" -- Ausgebucht");
-        System.out.println("");
+        System.out.println();
 
         System.out.print("3 - Dreierzimmer");
         if(myLogic.filterBySize(myLogic.getCabins(), 3)[0]==null) System.out.print(" -- Ausgebucht");
-        System.out.println("");
+        System.out.println();
 
         System.out.print("4 - Viererzimmer");
         if(myLogic.filterBySize(myLogic.getCabins(), 4)[0]==null) System.out.print(" -- Ausgebucht");
-        System.out.println("");
+        System.out.println();
 
         System.out.print("5 - Präsidentensuite");
         if(myLogic.filterBySize(myLogic.getCabins(), Constants.PRESIDENT_SUITE_KEY)[0]==null) System.out.print(" -- Ausgebucht");
-        System.out.println("");
+        System.out.println();
 
         int roomType = scanner.nextInt();
         if (roomType == 1 || roomType == 2 || roomType == 3 || roomType == 4) {
