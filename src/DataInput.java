@@ -103,9 +103,30 @@ public class DataInput {
             chosenCabin.addBookingEntry(new TimeSpan(dateOfArrival, dateOfDeparture));
             int cost = chosenCabin.calculateTotalCost(plannedTimeSpan);
 
+            // room type selection
+            String roomTypeSelection = "";
+            switch(roomType){
+                case 1:
+                    roomTypeSelection = "Einzelzimmer";
+                    break;
+                case 2:
+                    roomTypeSelection = "Doppelzimmer";
+                    break;
+                case 3:
+                    roomTypeSelection = "Dreierzimmer";
+                    break;
+                case 4:
+                    roomTypeSelection = "Viererzimmer";
+                    break;
+                default:
+                    roomTypeSelection = "Präsidentensuite";
+                    break;
+            }
+
             System.out.println("\n" +
-                    "=============================================================================\n" +
-                    "Sie haben ein/eine " + roomType + " für " + people + " Personen ausgewählt. \n" +
+                    "=============================================================================\n");
+            System.out.print(roomType == 10 ? "Sie haben ein " : "Sie haben ein ");
+            System.out.println(roomTypeSelection + " für " + people + " Personen ausgewählt. \n" +
                     "Die Kabine ist vom " + dateOfArrival + " bis " + dateOfDeparture + " gebucht. \n" +
                     "Die Kosten belaufen sich auf: " + cost);
 
