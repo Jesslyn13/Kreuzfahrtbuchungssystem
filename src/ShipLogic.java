@@ -40,7 +40,7 @@ public class ShipLogic{
         Cabin[] matchingCabins = new Cabin[Constants.TOTAL_CABIN_COUNT];
         int index = 0;
         for(Cabin c : cabins) {
-            if(c.hasWindow()) {
+            if(c.hasWindow()==hasWindow) {
                 matchingCabins[index] = c;
                 index++;
             }
