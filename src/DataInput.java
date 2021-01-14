@@ -112,7 +112,7 @@ public class DataInput {
             System.out.print(roomType == 10 ? "Sie haben ein " : "Sie haben ein ");
             System.out.println(roomTypeSelection + " für " + people + " Personen ausgewählt. \n" +
                     "Die Kabine ist vom " + dateOfArrival + " bis " + dateOfDeparture + " gebucht. \n" +
-                    "Die Kosten belaufen sich auf: " + cost);
+                    "Die Kosten belaufen sich auf: " + cost + "+ €");
 
             System.out.println("Die Titanic 2 wünscht eine sichere Reise - Gemeinsam gehen wir nicht wieder unter :) \n" +
                     "=============================================================================\n\n");
