@@ -48,7 +48,7 @@ public class DataInput {
             String typeOfCabin = scanner.next();
             wantWindow = typeOfCabin.equalsIgnoreCase("Ja");
 
-        } else if (roomType == 5) {
+        } else if (roomType == Constants.PRESIDENT_SUITE_KEY) {
             wantWindow = true;
             System.out.println("In die Präsidentensuit können maximal 10 Personen!");
             roomType = 10; // President Suit has a capacity of 10 people
