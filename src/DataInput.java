@@ -95,9 +95,9 @@ public class DataInput {
             chosenCabin.addBookingEntry(new TimeSpan(dateOfArrival,dateOfDeparture));
             int cost = chosenCabin.calculateTotalCost(plannedTimeSpan);
 
-            System.out.println("Sie haben eine Zimmergröße von " + roomType + " für " + people + " Personen ausgewählt. \n" +
+            System.out.println("Sie haben ein/eine " + roomType + " für " + people + " Personen ausgewählt. \n" +
                     "Die Kabine ist vom " + dateOfArrival + " bis " + dateOfDeparture + " gebucht. \n" +
-                    "Die kosten belauen sich auf: " + cost);
+                    "Die Kosten belaufen sich auf: " + cost);
 
             System.out.println("Die Titanic 2 wünscht eine sichere Reise - Gemeinsam gehen wir nicht wieder unter:)");
 
