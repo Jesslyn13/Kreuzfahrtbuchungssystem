@@ -29,23 +29,23 @@ public class DataInput {
             System.out.println("Was für ein Zimmer wollen sie haben?");
 
             System.out.print("1 - Einzelzimmer");
-            if (myLogic.filterBySize(myLogic.getCabins(), 1)[0] == null) System.out.print(" -- Ausgebucht");
+            if (myLogic.filterBySize(filteredList, 1)[0] == null) System.out.print(" -- Ausgebucht");
             System.out.println();
 
             System.out.print("2 - Doppelzimmer");
-            if (myLogic.filterBySize(myLogic.getCabins(), 2)[0] == null) System.out.print(" -- Ausgebucht");
+            if (myLogic.filterBySize(filteredList, 2)[0] == null) System.out.print(" -- Ausgebucht");
             System.out.println();
 
             System.out.print("3 - Dreierzimmer");
-            if (myLogic.filterBySize(myLogic.getCabins(), 3)[0] == null) System.out.print(" -- Ausgebucht");
+            if (myLogic.filterBySize(filteredList, 3)[0] == null) System.out.print(" -- Ausgebucht");
             System.out.println();
 
             System.out.print("4 - Viererzimmer");
-            if (myLogic.filterBySize(myLogic.getCabins(), 4)[0] == null) System.out.print(" -- Ausgebucht");
+            if (myLogic.filterBySize(filteredList, 4)[0] == null) System.out.print(" -- Ausgebucht");
             System.out.println();
 
             System.out.print("5 - Präsidentensuite");
-            if (myLogic.filterBySize(myLogic.getCabins(), Constants.PRESIDENT_SUITE_KEY)[0] == null) System.out.print(" -- Ausgebucht");
+            if (myLogic.filterBySize(filteredList, Constants.PRESIDENT_SUITE_KEY)[0] == null) System.out.print(" -- Ausgebucht");
             System.out.println();
 
             int roomType = scanner.nextInt();
