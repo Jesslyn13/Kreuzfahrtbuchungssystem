@@ -10,7 +10,7 @@ public class Cabin {
         this.guestCapacity = guestCapacity;
     }
 
-    public void setBookedStatus(int guestsBooked) {
+    public void setBookedGuests(int guestsBooked) {
         this.guestsBooked = guestsBooked;
     }
 
