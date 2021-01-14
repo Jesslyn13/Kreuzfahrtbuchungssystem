@@ -21,10 +21,15 @@ public class DataInput {
             System.out.println("Wann hört ihre Reise auf? dd.mm.yyyy");
             Date dateOfDeparture = Constants.DATE_FORMAT.parse(scanner.nextLine());
 
-            //TODO: Dialog falls keine Kabine zum Datum
 
             TimeSpan plannedTimeSpan = new TimeSpan(dateOfArrival,dateOfDeparture);
             filteredList = myLogic.filterByTimeSpan(myLogic.getCabins(),plannedTimeSpan);
+
+            //TODO: Dialog falls keine Kabine zum Datum
+            if(filteredList[0] == null) {
+                System.out.println("Leider sind alle Kabinen in dem angegebenen Zeitraum ausgebucht!");
+                booking = false;
+            }
 
             System.out.println("Was für ein Zimmer wollen sie haben?");
 
@@ -58,10 +63,12 @@ public class DataInput {
                 //TODO: Dialog falls keine Außen/Innenkabinen
                 String typeOfCabin = scanner.next();
                 wantWindow = typeOfCabin.equalsIgnoreCase("Ja");
+
             } else if (roomType == Constants.PRESIDENT_SUITE_KEY) {
                 wantWindow = true;
                 //TODO: Dialog falls keinePräsidentensuite
                 System.out.println("In die Präsidentensuit können maximal 10 Personen!");
+
             } else {
                 System.out.println("Zimmercode ist ungültig");
             }
@@ -73,17 +80,21 @@ public class DataInput {
             int people = scanner.nextInt();
             if (!(people >= 1 && people <= roomType)) {
                 //TODO: Individueller Dialog pro Kabinengröße
-                System.out.println("Es können nur min. 1/max. 4 Personen in ein Zimmer. Ihr Zimmer muss auch großgenug sein!");
+                System.out.println("Die Kabinengröße ist leider zu klein für die angegebene Personenanzahl");
+                booking = false;
             }
+
 
             Cabin chosenCabin = filteredList[0];
             chosenCabin.setBookedGuests(people);
             chosenCabin.addBookingEntry(new TimeSpan(dateOfArrival,dateOfDeparture));
             int cost = chosenCabin.calculateTotalCost(plannedTimeSpan);
 
-            System.out.println("Ihr Aufenthalt bei uns kostet insgesamt €.");
-
             //TODO: Kosten berechnen
+            System.out.println("Sie haben eine Zimmergröße von " + roomType + " für " + people + " Personen ausgewählt. \n" +
+                    "Die Kabine ist vom " + dateOfArrival + " bis zum " + dateOfDeparture + " gebucht. \n" +
+                    "Die kosten belauen sich auf: " + cost);
+
             System.out.println("Die Titanic 2 wünscht eine sichere Reise - Gemeinsam gehen wir nicht wieder unter:)");
 
 
