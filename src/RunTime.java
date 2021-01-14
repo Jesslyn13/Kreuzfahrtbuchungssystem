@@ -11,9 +11,10 @@ public class RunTime {
 
 /*
 
- - User Input in Kabinliste
- - Start und Enddatum übergeben
+ - User Input in Kabineniste
+ - Filter/Suchfunktionen etc
  - (GUI)
+ - Code Kommentieren
  - Fehlersuche
 
  */

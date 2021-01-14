@@ -1,5 +1,3 @@
-import java.util.Map;
-
 public class Cabin {
 
     TimeSpan[] bookedTimes = new TimeSpan[1000];

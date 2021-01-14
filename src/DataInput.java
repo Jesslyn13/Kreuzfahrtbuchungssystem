@@ -8,6 +8,7 @@ public class DataInput{
 
     public void CheckIn(ShipLogic myLogic) throws ParseException {
 
+        //TODO: Struktur überarbeiten um Filteroptionen zuzulassen
         System.out.println("Herzlich Willkommen auf der Titanic 2");
         System.out.println("Wann beginnen sie ihre Reise? dd.mm.yyyy");
         Date dateOfArrival = Constants.DATE_FORMAT.parse(scanner.nextLine());
@@ -24,6 +25,8 @@ public class DataInput{
         if (!(people >= 1 && people <= 4))
             System.out.println("Es können nur min. 1/max. 4 Personen in ein Zimmer. Wenn sie mehr Zimmer benötigen, buchen sie diese bitte einzelen!");
 
+
+        //TODO: Werte richtig einspeichern
         new Cabin(wantWindow, people);
 
         System.out.println("Ihr Aufenthalt bei uns kostet insgesamt €.");

@@ -10,7 +10,6 @@ public class ShipLogic{
             }
             index += ct.getCount();
         }
-
     }
 
     public Cabin[] getFreeCabins(TimeSpan t) {
@@ -24,6 +23,8 @@ public class ShipLogic{
         }
         return freeCabins;
     }
+
+    //TODO: Add more filter methods
 
 
 }
