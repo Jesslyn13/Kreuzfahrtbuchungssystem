@@ -71,6 +71,7 @@ public class DataInput {
                 System.out.println("Es können nur min. 1/max. 4 Personen in ein Zimmer. Ihr Zimmer muss auch großgenug sein!");
                 return;
             }
+            //TODO: Filtern
 
             //TODO: Werte richtig einspeichern
             new Cabin(wantWindow, people);
