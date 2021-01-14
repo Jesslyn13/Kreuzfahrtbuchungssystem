@@ -12,7 +12,6 @@ public class DataInput {
         boolean booking = true;
         while(booking) {
 
-            //TODO: Struktur überarbeiten um Filteroptionen zuzulassen
             System.out.println("Herzlich Willkommen auf der Titanic 2");
 
             System.out.println("Wann beginnen sie ihre Reise? dd.mm.yyyy");
@@ -21,6 +20,9 @@ public class DataInput {
             System.out.println("Wann hört ihre Reise auf? dd.mm.yyyy");
             Date dateOfDeparture = Constants.DATE_FORMAT.parse(scanner.nextLine());
 
+            //TODO: Dialog falls keine Kabine zum Datum
+
+            //TODO: Filtern
 
             System.out.println("Was für ein Zimmer wollen sie haben?");
 
@@ -48,21 +50,24 @@ public class DataInput {
             int roomType = scanner.nextInt();
             if (roomType == 1 || roomType == 2 || roomType == 3 || roomType == 4) {
                 System.out.println("Möchten sie eine Außenkabine?");
+                //TODO: Dialog falls keine Außen/Innenkabinen
                 String typeOfCabin = scanner.next();
                 wantWindow = typeOfCabin.equalsIgnoreCase("Ja");
-
             } else if (roomType == Constants.PRESIDENT_SUITE_KEY) {
                 wantWindow = true;
+                //TODO: Dialog falls keinePräsidentensuite
                 System.out.println("In die Präsidentensuit können maximal 10 Personen!");
                 roomType = 10; // President Suit has a capacity of 10 people
 
             } else {
                 System.out.println("Zimmercode ist ungültig");
             }
+            //TODO: Filtern
 
             System.out.println("Mit wie vielen Personen kommen sie an Bord?");
             int people = scanner.nextInt();
             if (!(people >= 1 && people <= roomType)) {
+                //TODO: Individueller Dialog pro Kabinengröße
                 System.out.println("Es können nur min. 1/max. 4 Personen in ein Zimmer. Ihr Zimmer muss auch großgenug sein!");
                 return;
             }
@@ -70,10 +75,13 @@ public class DataInput {
             //TODO: Werte richtig einspeichern
             new Cabin(wantWindow, people);
 
-
             System.out.println("Ihr Aufenthalt bei uns kostet insgesamt €.");
+
+            //TODO: Kosten berechnen
             System.out.println("Die Titanic 2 wünscht eine sichere Reise - Gemeinsam gehen wir nicht wieder unter:)");
 
+
+            //TODO: Abbruchbedingung
         }
         scanner.close();
     }
