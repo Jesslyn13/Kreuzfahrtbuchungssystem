@@ -82,14 +82,18 @@ public class DataInput {
             filteredList = myLogic.filterByWindow(filteredList, wantWindow);
 
 
-            //TODO: Loop until correct input
-            System.out.println("Mit wie vielen Personen kommen sie an Bord?");
-            int people = scanner.nextInt();
-            scanner.nextLine();
-            if (!(people >= 1 && people <= roomType)) {
-                //TODO: Individueller Dialog pro Kabinengröße
-                System.out.println("Die Kabinengröße ist leider zu klein für die angegebene Personenanzahl");
-                booking = false;
+            boolean correctPersonCount = true;
+
+            int people = 0;
+            while(correctPersonCount) {
+                System.out.println("Mit wie vielen Personen kommen sie an Bord?");
+                people = scanner.nextInt();
+                scanner.nextLine();
+                if (!(people >= 1 && people <= roomType)) {
+                    System.out.println(people <= 0 ? "Es muss mindestens eine Person ins Zimmer" : "Die Kabinengröße ist leider zu klein für die angegebene Personenanzahl");
+                } else {
+                    correctPersonCount = false;
+                }
             }
 
 
@@ -98,11 +102,14 @@ public class DataInput {
             chosenCabin.addBookingEntry(new TimeSpan(dateOfArrival,dateOfDeparture));
             int cost = chosenCabin.calculateTotalCost(plannedTimeSpan);
 
-            System.out.println("Sie haben ein/eine " + roomType + " für " + people + " Personen ausgewählt. \n" +
+            System.out.println("\n" +
+                    "=============================================================================\n" +
+                    "Sie haben ein/eine " + roomType + " für " + people + " Personen ausgewählt. \n" +
                     "Die Kabine ist vom " + dateOfArrival + " bis " + dateOfDeparture + " gebucht. \n" +
                     "Die Kosten belaufen sich auf: " + cost);
 
-            System.out.println("Die Titanic 2 wünscht eine sichere Reise - Gemeinsam gehen wir nicht wieder unter:)");
+            System.out.println("Die Titanic 2 wünscht eine sichere Reise - Gemeinsam gehen wir nicht wieder unter :) \n" +
+                    "=============================================================================\n\n");
 
 
             //TODO: Abbruchbedingung
