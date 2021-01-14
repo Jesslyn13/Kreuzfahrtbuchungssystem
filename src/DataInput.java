@@ -26,10 +26,6 @@ public class DataInput {
             filteredList = myLogic.filterByTimeSpan(myLogic.getCabins(),plannedTimeSpan);
 
             //TODO: Dialog falls keine Kabine zum Datum
-            if(filteredList[0] == null) {
-                System.out.println("Leider sind alle Kabinen in dem angegebenen Zeitraum ausgebucht!");
-                booking = false;
-            }
 
             System.out.println("Was für ein Zimmer wollen sie haben?");
 
@@ -56,10 +52,6 @@ public class DataInput {
             int roomType = scanner.nextInt();
 
             filteredList = myLogic.filterBySize(filteredList, roomType);
-            if(filteredList[0]==null) {
-                System.out.println("No cabins with selected properties remaining.");
-                return;
-            }
 
 
             if (roomType == 1 || roomType == 2 || roomType == 3 || roomType == 4) {
@@ -82,16 +74,9 @@ public class DataInput {
                 return;
             }
 
-            if(filteredList[0]==null) {
-                System.out.println("list null");
-            }
             System.out.println(Arrays.asList(filteredList).contains(null));
 
             filteredList = myLogic.filterByWindow(filteredList, wantWindow);
-            if(filteredList[0]==null) {
-                System.out.println("No cabins with selected properties remaining.");
-                return;
-            }
 
 
             //TODO: Loop until correct input
