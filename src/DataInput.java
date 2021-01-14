@@ -1,4 +1,5 @@
 import java.text.ParseException;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -20,7 +21,6 @@ public class DataInput {
 
             System.out.println("Wann hört ihre Reise auf? dd.mm.yyyy");
             Date dateOfDeparture = Constants.DATE_FORMAT.parse(scanner.nextLine());
-
 
             TimeSpan plannedTimeSpan = new TimeSpan(dateOfArrival,dateOfDeparture);
             filteredList = myLogic.filterByTimeSpan(myLogic.getCabins(),plannedTimeSpan);
@@ -56,6 +56,10 @@ public class DataInput {
             int roomType = scanner.nextInt();
 
             filteredList = myLogic.filterBySize(filteredList, roomType);
+            if(filteredList[0]==null) {
+                System.out.println("No cabins with selected properties remaining.");
+                return;
+            }
 
 
             if (roomType == 1 || roomType == 2 || roomType == 3 || roomType == 4) {
@@ -73,11 +77,27 @@ public class DataInput {
                 System.out.println("Zimmercode ist ungültig");
             }
 
+            if(filteredList[0]==null) {
+                System.out.println("No cabins with selected properties remaining.");
+                return;
+            }
+
+            if(filteredList[0]==null) {
+                System.out.println("list null");
+            }
+            System.out.println(Arrays.asList(filteredList).contains(null));
+
             filteredList = myLogic.filterByWindow(filteredList, wantWindow);
+            if(filteredList[0]==null) {
+                System.out.println("No cabins with selected properties remaining.");
+                return;
+            }
+
 
             //TODO: Loop until correct input
             System.out.println("Mit wie vielen Personen kommen sie an Bord?");
             int people = scanner.nextInt();
+            scanner.nextLine();
             if (!(people >= 1 && people <= roomType)) {
                 //TODO: Individueller Dialog pro Kabinengröße
                 System.out.println("Die Kabinengröße ist leider zu klein für die angegebene Personenanzahl");
@@ -90,9 +110,8 @@ public class DataInput {
             chosenCabin.addBookingEntry(new TimeSpan(dateOfArrival,dateOfDeparture));
             int cost = chosenCabin.calculateTotalCost(plannedTimeSpan);
 
-            //TODO: Kosten berechnen
             System.out.println("Sie haben eine Zimmergröße von " + roomType + " für " + people + " Personen ausgewählt. \n" +
-                    "Die Kabine ist vom " + dateOfArrival + " bis zum " + dateOfDeparture + " gebucht. \n" +
+                    "Die Kabine ist vom " + dateOfArrival + " bis " + dateOfDeparture + " gebucht. \n" +
                     "Die kosten belauen sich auf: " + cost);
 
             System.out.println("Die Titanic 2 wünscht eine sichere Reise - Gemeinsam gehen wir nicht wieder unter:)");

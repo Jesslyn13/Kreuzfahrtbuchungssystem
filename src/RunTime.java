@@ -11,7 +11,6 @@ public class RunTime {
 
 /*
 
- - User Input in Kabineniste
  - Filter/Suchfunktionen etc
  - (GUI)
  - Code Kommentieren

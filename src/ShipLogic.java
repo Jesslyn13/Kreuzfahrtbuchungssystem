@@ -16,9 +16,11 @@ public class ShipLogic{
         Cabin[] matchingCabins = new Cabin[Constants.TOTAL_CABIN_COUNT];
         int index = 0;
         for(Cabin c : cabins) {
-            if(c.isAvailable(t)) {
-                matchingCabins[index] = c;
-                index++;
+            if(c!=null) {
+                if (c.isAvailable(t)) {
+                    matchingCabins[index] = c;
+                    index++;
+                }
             }
         }
         return matchingCabins;
@@ -28,9 +30,11 @@ public class ShipLogic{
         Cabin[] matchingCabins = new Cabin[Constants.TOTAL_CABIN_COUNT];
         int index = 0;
         for(Cabin c : cabins) {
-            if(c.getCapacity()==size) {
-                matchingCabins[index] = c;
-                index++;
+            if(c!=null) {
+                if (c.getCapacity() == size) {
+                    matchingCabins[index] = c;
+                    index++;
+                }
             }
         }
         return matchingCabins;
@@ -40,9 +44,11 @@ public class ShipLogic{
         Cabin[] matchingCabins = new Cabin[Constants.TOTAL_CABIN_COUNT];
         int index = 0;
         for(Cabin c : cabins) {
-            if(c.hasWindow()==hasWindow) {
-                matchingCabins[index] = c;
-                index++;
+            if(c!=null) {
+                if (c.hasWindow() == hasWindow) {
+                    matchingCabins[index] = c;
+                    index++;
+                }
             }
         }
         return matchingCabins;
@@ -51,8 +57,5 @@ public class ShipLogic{
     public Cabin[] getCabins() {
         return myShip;
     }
-
-    //TODO: Add more filter methods
-
 
 }

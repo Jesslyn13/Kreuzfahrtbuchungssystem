@@ -22,7 +22,7 @@ public class TimeSpan{
     }
 
     public long getDuration() {
-        return ChronoUnit.DAYS.between(
+        return 1+ChronoUnit.DAYS.between(
             startDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(),
             leaveDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());}
 

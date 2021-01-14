@@ -46,8 +46,13 @@ public class Cabin {
 
     public boolean isAvailable(TimeSpan timespan) {
         for(TimeSpan t : bookedTimes) {
-            if(t.isOverlapping(timespan)) {
-                return false;
+            if(t!=null) {
+                if (t.isOverlapping(timespan)) {
+                    return false;
+                }
+            }
+            else {
+                return true;
             }
         }
         return true;
