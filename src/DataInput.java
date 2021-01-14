@@ -1,3 +1,4 @@
+import java.sql.Time;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.Scanner;
@@ -11,6 +12,7 @@ public class DataInput {
     public void CheckIn(ShipLogic myLogic) throws ParseException {
         boolean booking = true;
         while(booking) {
+            Cabin[] filteredList;
 
             System.out.println("Herzlich Willkommen auf der Titanic 2");
 
@@ -22,7 +24,8 @@ public class DataInput {
 
             //TODO: Dialog falls keine Kabine zum Datum
 
-            //TODO: Filtern
+            TimeSpan plannedTimeSpan = new TimeSpan(dateOfArrival,dateOfDeparture);
+            filteredList = myLogic.filterByTimeSpan(myLogic.getCabins(),plannedTimeSpan);
 
             System.out.println("Was für ein Zimmer wollen sie haben?");
 
@@ -43,11 +46,14 @@ public class DataInput {
             System.out.println();
 
             System.out.print("5 - Präsidentensuite");
-            if (myLogic.filterBySize(myLogic.getCabins(), Constants.PRESIDENT_SUITE_KEY)[0] == null)
-                System.out.print(" -- Ausgebucht");
+            if (myLogic.filterBySize(myLogic.getCabins(), Constants.PRESIDENT_SUITE_KEY)[0] == null) System.out.print(" -- Ausgebucht");
             System.out.println();
 
             int roomType = scanner.nextInt();
+
+            filteredList = myLogic.filterBySize(filteredList, roomType);
+
+
             if (roomType == 1 || roomType == 2 || roomType == 3 || roomType == 4) {
                 System.out.println("Möchten sie eine Außenkabine?");
                 //TODO: Dialog falls keine Außen/Innenkabinen
@@ -57,24 +63,24 @@ public class DataInput {
                 wantWindow = true;
                 //TODO: Dialog falls keinePräsidentensuite
                 System.out.println("In die Präsidentensuit können maximal 10 Personen!");
-                roomType = 10; // President Suit has a capacity of 10 people
-
             } else {
                 System.out.println("Zimmercode ist ungültig");
             }
-            //TODO: Filtern
 
+            filteredList = myLogic.filterByWindow(filteredList, wantWindow);
+
+            //TODO: Loop until correct input
             System.out.println("Mit wie vielen Personen kommen sie an Bord?");
             int people = scanner.nextInt();
             if (!(people >= 1 && people <= roomType)) {
                 //TODO: Individueller Dialog pro Kabinengröße
                 System.out.println("Es können nur min. 1/max. 4 Personen in ein Zimmer. Ihr Zimmer muss auch großgenug sein!");
-                return;
             }
-            //TODO: Filtern
 
-            //TODO: Werte richtig einspeichern
-            new Cabin(wantWindow, people);
+            Cabin chosenCabin = filteredList[0];
+            chosenCabin.setBookedGuests(people);
+            chosenCabin.setBookedTimes(new TimeSpan(dateOfArrival,dateOfDeparture));
+            int cost = chosenCabin.calculateTotalCost();
 
             System.out.println("Ihr Aufenthalt bei uns kostet insgesamt €.");
 

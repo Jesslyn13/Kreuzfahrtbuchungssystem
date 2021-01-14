@@ -1,6 +1,7 @@
 public class Cabin {
 
     TimeSpan[] bookedTimes = new TimeSpan[1000];
+    int bookingEntryCount = 0;
     private final boolean hasWindow;
     private int guestsBooked;
     private final int guestCapacity;
@@ -14,11 +15,11 @@ public class Cabin {
         this.guestsBooked = guestsBooked;
     }
 
-    public TimeSpan[] getBookedTimes() {
-        return bookedTimes;
+    public int calculateTotalCost() {
+
     }
 
-    public int calculateCost() {
+    public int calculateCostPerDay() {
         int costPerDay = Constants.PRICE_PER_DAY_PER_GUEST.get(guestCapacity); // Default cost for a cabin simply depend on its size
         costPerDay *= guestsBooked;
 
@@ -28,10 +29,14 @@ public class Cabin {
         return costPerDay;
     }
 
+    public void setBookedTimes(TimeSpan t) {
+        bookedTimes[bookingEntryCount] = t;
+        bookingEntryCount++;
+    }
+
     public int getCapacity() {
         return guestCapacity;
     }
-
 
     public boolean hasWindow() {
         return hasWindow;

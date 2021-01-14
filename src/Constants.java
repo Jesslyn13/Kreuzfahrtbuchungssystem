@@ -7,8 +7,8 @@ public interface Constants<cabinTypes> {
     // Cabins with a window are more expensive by this multiplier
     double OUTSIDE_CABIN_COST_MULTIPLIER = 1.4;
 
-    // President suite is assigned a "size" so it can simply be a part of the price map
-    int PRESIDENT_SUITE_KEY = 5;
+    // President suite is assigned a "size" so it can simply be a part of the price map. The president suite has a capacity of 10 people
+    int PRESIDENT_SUITE_KEY = 10;
 
     DateFormat DATE_FORMAT = new SimpleDateFormat("dd.MM.yyyy");
 
