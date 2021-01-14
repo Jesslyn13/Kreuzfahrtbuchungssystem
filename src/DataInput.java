@@ -27,25 +27,27 @@ public class DataInput {
         System.out.println("4 - Viererzimmer");
         System.out.println("5 - Präsidentensuit");
 
-        int room = scanner.nextInt();
-        if (room == 1 || room == 2 || room == 3 || room == 4) {
+        int roomType = scanner.nextInt();
+        if (roomType == 1 || roomType == 2 || roomType == 3 || roomType == 4) {
             System.out.println("Möchten sie eine Außenkabine?");
             String typeOfCabin = scanner.next();
             wantWindow = typeOfCabin.equalsIgnoreCase("Ja");
 
-        } else if (room == 5) {
+        } else if (roomType == 5) {
             wantWindow = true;
+            System.out.println("In die Präsidentensuit können maximal 10 Personen!");
+            roomType = 10; // President Suit has a capacity of 10 people
+
         } else {
             System.out.println("Zimmercode ist ungültig");
         }
 
         System.out.println("Mit wie vielen Personen kommen sie an Bord?");
         int people = scanner.nextInt();
-        if (!(people >= 1 && people <= room)) {
+        if (!(people >= 1 && people <= roomType)) {
             System.out.println("Es können nur min. 1/max. 4 Personen in ein Zimmer. Ihr Zimmer muss auch großgenug sein!");
             return;
         }
-
 
 
         //TODO: Werte richtig einspeichern
