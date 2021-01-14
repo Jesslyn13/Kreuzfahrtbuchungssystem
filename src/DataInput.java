@@ -60,15 +60,16 @@ public class DataInput {
 
 
             if (roomType == 1 || roomType == 2 || roomType == 3 || roomType == 4) {
-                System.out.println("Möchten sie eine Außenkabine?");
+                System.out.println("Möchten sie eine Außenkabine? [Ja/Nein]");
                 //TODO: Dialog falls keine Außen/Innenkabinen
                 String typeOfCabin = scanner.next();
                 wantWindow = typeOfCabin.equalsIgnoreCase("Ja");
 
             } else if (roomType == 5) {
                 wantWindow = true;
+                roomType = 10; // set the cabin limit for the presidential suite
                 //TODO: Dialog falls keinePräsidentensuite
-                System.out.println("In die Präsidentensuit können maximal 10 Personen!");
+                System.out.println("In die Präsidentensuite können maximal 10 Personen!");
 
             } else {
                 System.out.println("Zimmercode ist ungültig");
@@ -112,7 +113,11 @@ public class DataInput {
                     "=============================================================================\n\n");
 
 
-            //TODO: Abbruchbedingung
+            // Termination condition
+            System.out.println("Wollen sie noche eine Buchung durchführen? [Ja/Nein]");
+            String terminationCondition = scanner.next();
+            booking = terminationCondition.equalsIgnoreCase("Ja");
+
         }
         scanner.close();
     }
