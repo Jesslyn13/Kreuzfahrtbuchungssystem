@@ -1,5 +1,4 @@
 import java.text.ParseException;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -24,8 +23,6 @@ public class DataInput {
 
             TimeSpan plannedTimeSpan = new TimeSpan(dateOfArrival, dateOfDeparture);
             filteredList = myLogic.filterByTimeSpan(myLogic.getCabins(), plannedTimeSpan);
-
-            //TODO: Dialog falls keine Kabine zum Datum
 
             System.out.println("Was für ein Zimmer wollen sie haben?");
 
@@ -61,14 +58,12 @@ public class DataInput {
 
             if (roomType == 1 || roomType == 2 || roomType == 3 || roomType == 4) {
                 System.out.println("Möchten sie eine Außenkabine? [Ja/Nein]");
-                //TODO: Dialog falls keine Außen/Innenkabinen
                 String typeOfCabin = scanner.next();
                 wantWindow = typeOfCabin.equalsIgnoreCase("Ja");
 
             } else if (roomType == 5) {
                 wantWindow = true;
                 roomType = 10; // set the cabin limit for the presidential suite
-                //TODO: Dialog falls keinePräsidentensuite
                 System.out.println("In die Präsidentensuite können maximal 10 Personen!");
 
             } else {
@@ -104,24 +99,13 @@ public class DataInput {
             int cost = chosenCabin.calculateTotalCost(plannedTimeSpan);
 
             // room type selection
-            String roomTypeSelection = "";
-            switch(roomType){
-                case 1:
-                    roomTypeSelection = "Einzelzimmer";
-                    break;
-                case 2:
-                    roomTypeSelection = "Doppelzimmer";
-                    break;
-                case 3:
-                    roomTypeSelection = "Dreierzimmer";
-                    break;
-                case 4:
-                    roomTypeSelection = "Viererzimmer";
-                    break;
-                default:
-                    roomTypeSelection = "Präsidentensuite";
-                    break;
-            }
+            String roomTypeSelection = switch (roomType) {
+                case 1 -> "Einzelzimmer";
+                case 2 -> "Doppelzimmer";
+                case 3 -> "Dreierzimmer";
+                case 4 -> "Viererzimmer";
+                default -> "Präsidentensuite";
+            };
 
             System.out.println("\n" +
                     "=============================================================================\n");
