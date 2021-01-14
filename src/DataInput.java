@@ -11,7 +11,7 @@ public class DataInput {
 
     public void CheckIn(ShipLogic myLogic) throws ParseException {
         boolean booking = true;
-        while(booking) {
+        while (booking) {
             Cabin[] filteredList;
 
             System.out.println("Herzlich Willkommen auf der Titanic 2");
@@ -22,8 +22,8 @@ public class DataInput {
             System.out.println("Wann hört ihre Reise auf? dd.mm.yyyy");
             Date dateOfDeparture = Constants.DATE_FORMAT.parse(scanner.nextLine());
 
-            TimeSpan plannedTimeSpan = new TimeSpan(dateOfArrival,dateOfDeparture);
-            filteredList = myLogic.filterByTimeSpan(myLogic.getCabins(),plannedTimeSpan);
+            TimeSpan plannedTimeSpan = new TimeSpan(dateOfArrival, dateOfDeparture);
+            filteredList = myLogic.filterByTimeSpan(myLogic.getCabins(), plannedTimeSpan);
 
             //TODO: Dialog falls keine Kabine zum Datum
 
@@ -46,15 +46,15 @@ public class DataInput {
             System.out.println();
 
             System.out.print("5 - Präsidentensuite");
-            if (myLogic.filterBySize(filteredList, Constants.PRESIDENT_SUITE_KEY)[0] == null) System.out.print(" -- Ausgebucht");
+            if (myLogic.filterBySize(filteredList, Constants.PRESIDENT_SUITE_KEY)[0] == null)
+                System.out.print(" -- Ausgebucht");
             System.out.println();
 
             int roomType = scanner.nextInt();
 
-            if(roomType!=5) {
-                filteredList = myLogic.filterBySize(filteredList,roomType);
-            }
-            else {
+            if (roomType != 5) {
+                filteredList = myLogic.filterBySize(filteredList, roomType);
+            } else {
                 filteredList = myLogic.filterBySize(filteredList, Constants.PRESIDENT_SUITE_KEY);
             }
 
@@ -75,8 +75,8 @@ public class DataInput {
                 System.out.println("Zimmercode ist ungültig");
             }
 
-            if(filteredList[0]==null) {
-                System.out.println("No cabins with selected properties remaining.");
+            if (filteredList[0] == null) {
+                System.out.println("Leider ist das ausgewählte Zimmer nicht mehr verfügbar.");
                 return;
             }
 
@@ -86,7 +86,7 @@ public class DataInput {
             boolean correctPersonCount = true;
 
             int people = 0;
-            while(correctPersonCount) {
+            while (correctPersonCount) {
                 System.out.println("Mit wie vielen Personen kommen sie an Bord?");
                 people = scanner.nextInt();
                 scanner.nextLine();
@@ -100,7 +100,7 @@ public class DataInput {
 
             Cabin chosenCabin = filteredList[0];
             chosenCabin.setBookedGuests(people);
-            chosenCabin.addBookingEntry(new TimeSpan(dateOfArrival,dateOfDeparture));
+            chosenCabin.addBookingEntry(new TimeSpan(dateOfArrival, dateOfDeparture));
             int cost = chosenCabin.calculateTotalCost(plannedTimeSpan);
 
             System.out.println("\n" +
@@ -115,7 +115,7 @@ public class DataInput {
 
             // Termination condition
             System.out.println("Wollen sie noche eine Buchung durchführen? [Ja/Nein]");
-            String terminationCondition = scanner.next();
+            String terminationCondition = scanner.nextLine();
             booking = terminationCondition.equalsIgnoreCase("Ja");
 
         }
