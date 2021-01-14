@@ -23,7 +23,7 @@ public class Cabin {
         costPerDay = Constants.PRICE_PER_DAY_PER_GUEST.get(guestCapacity); // Default cost for a cabin simply depend on its size
         costPerDay *= guestsBooked;
 
-        if (hasWindow) {
+        if (hasWindow && guestCapacity!=Constants.PRESIDENT_SUITE_KEY) {
             costPerDay *= Constants.OUTSIDE_CABIN_COST_MULTIPLIER;   // Cabins with a window are more expensive by a fixed multiplier
         }
     }
