@@ -51,9 +51,6 @@ public class Cabin {
                     return false;
                 }
             }
-            else {
-                return true;
-            }
         }
         return true;
     }
