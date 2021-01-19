@@ -12,6 +12,15 @@ public class ShipLogic{
         }
     }
 
+    public boolean containsCabinType(CabinType ct) {
+        for(Cabin c :  myShip) {
+            if(ct.getCapacity()==c.getCapacity() && ct.hasWindow()==c.hasWindow()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public Cabin[] filterByTimeSpan(Cabin[] cabins, TimeSpan t) {
         Cabin[] matchingCabins = new Cabin[Constants.TOTAL_CABIN_COUNT];
         int index = 0;
