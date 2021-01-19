@@ -147,7 +147,7 @@ public class DataInput implements Constants{
                 }
             }
 
-
+            // calculates the costs depending on cabin, people and duration
             Cabin chosenCabin = filteredList[0];
             chosenCabin.setBookedGuests(people);
             chosenCabin.addBookingEntry(new TimeSpan(dateOfArrival, dateOfDeparture));
