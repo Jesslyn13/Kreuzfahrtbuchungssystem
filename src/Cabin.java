@@ -1,4 +1,4 @@
-import java.time.temporal.ChronoUnit;
+import java.util.Arrays;
 
 public class Cabin {
 
@@ -11,6 +11,16 @@ public class Cabin {
     public Cabin(boolean hasWindow, int guestCapacity) {
         this.hasWindow = hasWindow;
         this.guestCapacity = guestCapacity;
+    }
+
+    @Override
+    public String toString() {
+        return "Cabin{" +
+                "bookedTimes=" + Arrays.toString(bookedTimes) +
+                ", bookingEntryCount=" + bookingEntryCount +
+                ", hasWindow=" + hasWindow +
+                ", guestCapacity=" + guestCapacity +
+                '}';
     }
 
     public void setBookedGuests(int guestsBooked) {

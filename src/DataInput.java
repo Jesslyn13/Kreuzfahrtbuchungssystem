@@ -8,7 +8,10 @@ public class DataInput {
 
     private boolean wantWindow;
 
-    public void CheckIn(ShipLogic myLogic) throws ParseException {
+
+    public void ConsoleCheckIn(ShipLogic myLogic) throws ParseException {
+        //TODO: add menu States and return Button
+
         boolean booking = true;
         while (booking) {
             Cabin[] filteredList;
