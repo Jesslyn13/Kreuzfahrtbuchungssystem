@@ -76,9 +76,18 @@ public class 	GUI3 extends JFrame {
 		contentPane.add(lblPreis);
 		
 		JButton btnBack2 = new JButton("Z\u00FCruck");
+		JButton btnBack2 = new JButton("Zur\u00FCck");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				GUI3.this.setVisible(false);
+				GUI2 a = new GUI2();
+				a.setVisible(true);
+			}
+		});
 		btnBack2.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnBack2.setBounds(10, 719, 123, 34);
 		contentPane.add(btnBack2);
+
 		
 		JButton btnNext3 = new JButton("Weiter");
 		btnNext3.addActionListener(new ActionListener() {
