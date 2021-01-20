@@ -8,12 +8,8 @@ public class DataInput implements Constants{
 
     private boolean hasWindow;
 
-    private int passengerCount,roomChoice;
-    private TimeSpan timeSpan;
     private ShipLogic myLogic;
     private GUI myGUI;
-
-    private Cabin[] filteredForSecondPage;
 
 
     public DataInput()  {
@@ -27,10 +23,9 @@ public class DataInput implements Constants{
 
     //On the first page, the guests will choose the amount of passengers they'd like to go with and from when to when they will be there
     public void checkInFirstPage(int passengerCount, Date dateOfArrival, Date dateOfDeparture) {
-        this.passengerCount = passengerCount;
-        this.timeSpan = new TimeSpan(dateOfArrival, dateOfDeparture);
-       filteredForSecondPage = myLogic.filterBySize(myLogic.getCabins(),passengerCount);
-       filteredForSecondPage = myLogic.filterByTimeSpan(filteredForSecondPage,timeSpan);
+        TimeSpan timeSpan = new TimeSpan(dateOfArrival, dateOfDeparture);
+        Cabin[] filteredForSecondPage = myLogic.filterBySize(myLogic.getCabins(), passengerCount);
+       filteredForSecondPage = myLogic.filterByTimeSpan(filteredForSecondPage, timeSpan);
 
        boolean[] containsCabinTypes = new boolean[CABIN_TYPES.length];
        for(int i = 0;i<CABIN_TYPES.length;i++) {
@@ -41,8 +36,7 @@ public class DataInput implements Constants{
 
     //The second page decides what type of room the passenger can select based on the amount of people they are going to bring.
     public void checkInSecondPage(int roomChoice, boolean hasWindow) {
-       this.roomChoice=roomChoice;
-       this.hasWindow=hasWindow;
+        this.hasWindow=hasWindow;
         myGUI.thirdPage();
     }
 
