@@ -67,6 +67,7 @@ public class GUI2 extends JFrame {
 		lblZimmerauswahl.setFont(new Font("Tahoma", Font.BOLD, 37));
 		panelStart.add(lblZimmerauswahl);
 
+		// Zurück Button auf das erste Fenster
 		JButton btnBack = new JButton("Zur\u00FCck");
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -79,6 +80,7 @@ public class GUI2 extends JFrame {
 		btnBack.setBounds(10, 719, 123, 34);
 		contentPane.add(btnBack);
 
+		// Weiter Button auf das zweite Fenster
 		JButton btnNext2 = new JButton("Weiter");
 		btnNext2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -92,6 +94,8 @@ public class GUI2 extends JFrame {
 		btnNext2.setEnabled(false);
 		contentPane.add(btnNext2);
 
+
+		// Hier wird ausgewähl, ob man ein Fenster haben will oder nicht.
 		JCheckBox chckbxFenster = new JCheckBox("Fenster");
 		chckbxFenster.setFont(new Font("Tahoma", Font.BOLD, 18));
 		chckbxFenster.setBounds(30, 605, 95, 34);
@@ -158,6 +162,8 @@ public class GUI2 extends JFrame {
 		lblNewLabel.setBounds(821, 226, 139, 25);
 		contentPane.add(lblNewLabel);
 
+
+		// Button für Zimmer mit 1 person
 		JButton btnZimmer1 = new JButton("New button");
 		btnZimmer1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -170,6 +176,7 @@ public class GUI2 extends JFrame {
 		btnZimmer1.setBackground(new Color(0, 0, 0, 0));
 		contentPane.add(btnZimmer1);
 
+		// Button für Zimmer mit 2 personen
 		JButton btnZimmer2 = new JButton("New button");
 		btnZimmer2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -182,6 +189,7 @@ public class GUI2 extends JFrame {
 		btnZimmer2.setBackground(new Color(0, 0, 0, 0));
 		contentPane.add(btnZimmer2);
 
+		// Button für Zimmer mit 3 personen
 		JButton btnZimmer3 = new JButton("New button");
 		btnZimmer3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -194,6 +202,7 @@ public class GUI2 extends JFrame {
 		btnZimmer3.setBackground(new Color(0, 0, 0, 0));
 		contentPane.add(btnZimmer3);
 
+		// Button für Zimmer mit 4 personen
 		JButton btnZimmer4 = new JButton("New button");
 		btnZimmer4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -206,6 +215,7 @@ public class GUI2 extends JFrame {
 		btnZimmer4.setBackground(new Color(0, 0, 0, 0));
 		contentPane.add(btnZimmer4);
 
+		// Button für Suite
 		JButton btnSuite = new JButton("New button");
 		btnSuite.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

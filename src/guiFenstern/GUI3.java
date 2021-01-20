@@ -76,6 +76,7 @@ public class 	GUI3 extends JFrame {
 		contentPane.add(lblPreis);
 		
 
+		// Zurck Button auf Fenster 2
 		JButton btnBack2 = new JButton("Zur\u00FCck");
 		btnBack2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -88,7 +89,7 @@ public class 	GUI3 extends JFrame {
 		btnBack2.setBounds(10, 719, 123, 34);
 		contentPane.add(btnBack2);
 
-		
+		// Weiter Button auf Fenster 4
 		JButton btnNext3 = new JButton("Weiter");
 		btnNext3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

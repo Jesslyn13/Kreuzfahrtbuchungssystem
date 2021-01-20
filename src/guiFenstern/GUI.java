@@ -61,6 +61,7 @@ public class GUI extends JFrame {
 		lblNewLabel.setBounds(103, 406, 172, 34);
 		contentPane.add(lblNewLabel);
 
+		//Hier wird die Anzahl der Personon eingegeben
 		JSpinner spinnerAnzahlPers = new JSpinner();
 		spinnerAnzahlPers.setBounds(103, 436, 153, 26);
 		contentPane.add(spinnerAnzahlPers);
@@ -77,14 +78,17 @@ public class GUI extends JFrame {
 		lblBis.setBounds(857, 406, 172, 34);
 		contentPane.add(lblBis);
 
+		// Datum ende der Fahrt
 		JDateChooser dateBis = new JDateChooser();
 		dateBis.setBounds(857, 436, 135, 26);
 		contentPane.add(dateBis);
 
+		// Datum anfang der Fahrt
 		JDateChooser dateVon = new JDateChooser();
 		dateVon.setBounds(495, 436, 135, 26);
 		contentPane.add(dateVon);
 
+		// hier muss nach was geändert werden,sodass man nicht auf die nächste Seite kommen, wenn die Felder leer sind
 		JButton btnNext = new JButton("Weiter");
 		btnNext.setEnabled(false);
 		if (spinnerAnzahlPers != null && dateBis != null) {
