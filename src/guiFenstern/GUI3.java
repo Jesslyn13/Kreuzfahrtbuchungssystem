@@ -13,7 +13,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class GUI3 extends JFrame {
+public class 	GUI3 extends JFrame {
 
 	private JPanel contentPane;
 

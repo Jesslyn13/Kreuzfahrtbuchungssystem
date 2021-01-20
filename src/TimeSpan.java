@@ -27,10 +27,7 @@ public class TimeSpan{
             leaveDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());}
 
     public boolean isOverlapping(TimeSpan t) {
-        return (
-                (startDate.before(t.getLeaveDate()) && t.getStartDate().before(leaveDate)) || startDate.equals(t.getStartDate()) && leaveDate.equals(t.getLeaveDate())
-
-        );
+        return ((startDate.before(t.getLeaveDate()) && t.getStartDate().before(leaveDate)) || startDate.equals(t.getStartDate()) && leaveDate.equals(t.getLeaveDate()));
     }
 
 

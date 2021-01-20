@@ -11,14 +11,6 @@ import java.awt.Font;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import javax.swing.JSpinner;
-import javax.swing.JTable;
-import javax.swing.JFormattedTextField.AbstractFormatter;
-
-import java.util.Properties;
-import com.toedter.calendar.JCalendar;
-import com.toedter.components.JSpinField;
-import com.toedter.calendar.JDayChooser;
-import com.toedter.components.JLocaleChooser;
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -95,7 +87,7 @@ public class GUI extends JFrame {
 
 		JButton btnNext = new JButton("Weiter");
 		btnNext.setEnabled(false);
-		if (spinnerAnzahlPers != null && dateVon != null && dateBis != null) {
+		if (spinnerAnzahlPers != null && dateBis != null) {
 			btnNext.setEnabled(true);
 		}
 
@@ -104,6 +96,7 @@ public class GUI extends JFrame {
 				setVisible(false);
 				GUI2 frame = new GUI2();
 				frame.setVisible(true);
+
 
 			}
 		});

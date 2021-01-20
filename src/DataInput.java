@@ -9,16 +9,10 @@ public class DataInput implements Constants{
     private boolean hasWindow;
 
     private ShipLogic myLogic;
-    private GUI myGUI;
-
+    //private GUI myGUI;
 
     public DataInput()  {
-    }
-
-    public DataInput(GUI gui)  {
         myLogic = new ShipLogic();
-        myGUI=gui;
-
     }
 
     //On the first page, the guests will choose the amount of passengers they'd like to go with and from when to when they will be there
@@ -31,25 +25,24 @@ public class DataInput implements Constants{
        for(int i = 0;i<CABIN_TYPES.length;i++) {
             containsCabinTypes[i] = myLogic.containsCabinType(CABIN_TYPES[i]);
        }
-       myGUI.secondPage(containsCabinTypes);
+      // myGUI.secondPage(containsCabinTypes);
     }
 
     //The second page decides what type of room the passenger can select based on the amount of people they are going to bring.
     public void checkInSecondPage(int roomChoice, boolean hasWindow) {
         this.hasWindow=hasWindow;
-        myGUI.thirdPage();
     }
 
     //The third page is used to decide what kind of room the passenger will take. These options are limited based on *
     public void checkInThirdPage() {
-        myGUI.fourthPage();
     }
 
     public void checkInFourthPage(boolean bookAnotherRoom) {
      if(bookAnotherRoom) {
-         myGUI.firstPage();
+     //    myGUI.firstPage();
      }
     }
+
 
 
 
