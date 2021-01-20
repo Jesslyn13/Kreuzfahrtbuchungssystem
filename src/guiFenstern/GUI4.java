@@ -74,6 +74,13 @@ public class GUI4 extends JFrame {
 		contentPane.add(tfWeitereFahrt);
 		
 		JButton btnYes = new JButton();
+		btnYes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				GUI a = new GUI();
+				a.setVisible(true);
+			}
+		});
 		btnYes.setBorder(null);
 		btnYes.setBackground(Color.LIGHT_GRAY);
 		btnYes.setOpaque(false);
