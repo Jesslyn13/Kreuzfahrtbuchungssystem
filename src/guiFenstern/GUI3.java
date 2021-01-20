@@ -75,9 +75,9 @@ public class 	GUI3 extends JFrame {
 		lblPreis.setBounds(27, 396, 123, 28);
 		contentPane.add(lblPreis);
 		
-		JButton btnBack2 = new JButton("Z\u00FCruck");
+
 		JButton btnBack2 = new JButton("Zur\u00FCck");
-		btnBack.addActionListener(new ActionListener() {
+		btnBack2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				GUI3.this.setVisible(false);
 				GUI2 a = new GUI2();
