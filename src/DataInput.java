@@ -65,8 +65,8 @@ public class DataInput implements Constants{
         //TODO: add menu States and return Button
 
         boolean booking = true;
-        while (booking) {
-            Cabin[] filteredList;
+        Cabin[] filteredList;
+                while (booking) {
 
             System.out.println("Herzlich Willkommen auf der Titanic 2");
 
@@ -174,7 +174,7 @@ public class DataInput implements Constants{
 
 
             // Termination condition
-            System.out.println("Wollen sie noche eine Buchung durchführen? [Ja/Nein]");
+            System.out.println("Wollen sie noch eine Buchung durchführen? [Ja/Nein]");
             String terminationCondition = scanner.nextLine();
             booking = terminationCondition.equalsIgnoreCase("Ja");
 
