@@ -73,8 +73,6 @@ public class GUI4 extends JFrame {
 		tfWeitereFahrt.setEditable(false);
 		contentPane.add(tfWeitereFahrt);
 
-
-		// Button für neue Buchungen
 		JButton btnYes = new JButton();
 		btnYes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -94,10 +92,10 @@ public class GUI4 extends JFrame {
 		ImageIcon c = new ImageIcon(newimg);
 		btnYes.setIcon(c);
 		contentPane.add(btnYes);
-		
-		
-	
-		// Button um den Programm zu schließen
+
+
+
+
 		JButton btnNo = new JButton();
 		btnNo.setBorder(null);
 		btnNo.addActionListener(new ActionListener() {

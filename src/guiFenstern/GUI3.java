@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
+import java.text.SimpleDateFormat;
 
 public class GUI3 extends JFrame {
 
@@ -21,6 +22,7 @@ public class GUI3 extends JFrame {
 	private JTextField tfVonDatum;
 	private JTextField tfBisDatum;
 	private JTextField tfPreis;
+	private JTextField tfPersonenanzahl;
 
 	/**
 	 * Launch the application.
@@ -62,17 +64,17 @@ public class GUI3 extends JFrame {
 
 		JLabel lblZimmer = new JLabel("Zimmer:");
 		lblZimmer.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblZimmer.setBounds(27, 240, 123, 28);
+		lblZimmer.setBounds(27, 240, 92, 28);
 		contentPane.add(lblZimmer);
 
 		JLabel lblVon = new JLabel("Von:");
 		lblVon.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblVon.setBounds(27, 278, 123, 28);
+		lblVon.setBounds(27, 278, 52, 28);
 		contentPane.add(lblVon);
 
 		JLabel lblBis = new JLabel("Bis:");
 		lblBis.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblBis.setBounds(27, 316, 123, 28);
+		lblBis.setBounds(27, 316, 44, 28);
 		contentPane.add(lblBis);
 
 		JLabel lblPreis = new JLabel("Preis:");
@@ -109,34 +111,56 @@ public class GUI3 extends JFrame {
 
 		// Textfield Da wird die Kabine gespreichert und angezeigt
 		tfZimmer = new JTextField();
+		tfZimmer.setFont(new Font("Tahoma", Font.BOLD, 20));
 		tfZimmer.setBorder(null);
 		tfZimmer.setEditable(false);
-		tfZimmer.setBounds(119, 240, 152, 28);
+		tfZimmer.setBounds(212, 241, 152, 28);
 		contentPane.add(tfZimmer);
 		tfZimmer.setColumns(10);
 
 		// Datum Textfield (Anfang der Fahrt)
-		tfVonDatum = new JTextField();
+		SimpleDateFormat dcn = new SimpleDateFormat("yyyy-MM-dd");
+		String date = dcn.format(GUI.dateVon.getDate() );
+		tfVonDatum = new JTextField(date.toString());
+		tfVonDatum.setFont(new Font("Tahoma", Font.BOLD, 20));
 		tfVonDatum.setBorder(null);
 		tfVonDatum.setEditable(false);
 		tfVonDatum.setColumns(10);
-		tfVonDatum.setBounds(119, 278, 152, 28);
+		tfVonDatum.setBounds(212, 278, 152, 28);
 		contentPane.add(tfVonDatum);
 
 		// Datum Textfield (Ende der Fahrt)
-		tfBisDatum = new JTextField();
+		SimpleDateFormat dcn2 = new SimpleDateFormat("yyyy-MM-dd");
+		String date2 = dcn2.format(GUI.dateBis.getDate() );
+		tfBisDatum = new JTextField(date2.toString());
+		tfBisDatum.setFont(new Font("Tahoma", Font.BOLD, 20));
 		tfBisDatum.setBorder(null);
 		tfBisDatum.setEditable(false);
 		tfBisDatum.setColumns(10);
-		tfBisDatum.setBounds(119, 316, 152, 28);
+		tfBisDatum.setBounds(212, 316, 152, 28);
 		contentPane.add(tfBisDatum);
 
 		// Textfield für den Preis
 		tfPreis = new JTextField();
+		tfPreis.setFont(new Font("Tahoma", Font.BOLD, 20));
 		tfPreis.setBorder(null);
 		tfPreis.setEditable(false);
 		tfPreis.setColumns(10);
-		tfPreis.setBounds(119, 396, 152, 28);
+		tfPreis.setBounds(212, 396, 152, 28);
 		contentPane.add(tfPreis);
+
+		JLabel lblAnzahlpersonen = new JLabel("Personenanzahl:");
+		lblAnzahlpersonen.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblAnzahlpersonen.setBounds(27, 208, 175, 34);
+		contentPane.add(lblAnzahlpersonen);
+
+		String stringValueofPerson = "" + GUI.valueofPerson;
+		tfPersonenanzahl = new JTextField(stringValueofPerson);
+		tfPersonenanzahl.setFont(new Font("Tahoma", Font.BOLD, 20));
+		tfPersonenanzahl.setEditable(false);
+		tfPersonenanzahl.setColumns(10);
+		tfPersonenanzahl.setBorder(null);
+		tfPersonenanzahl.setBounds(213, 212, 152, 28);
+		contentPane.add(tfPersonenanzahl);
 	}
 }

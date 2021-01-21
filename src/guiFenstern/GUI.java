@@ -10,7 +10,6 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.ImageIcon;
 import java.awt.Color;
-import javax.swing.JSpinner;
 
 import java.util.Date;
 
@@ -18,13 +17,17 @@ import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.SpinnerNumberModel;
 
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class GUI extends JFrame {
 
 	private JPanel contentPane;
 	GUI2 frame2;
+	static int valueofPerson;
+	static JDateChooser dateVon;
+	static JDateChooser dateBis;
 
 	/**
 	 * Launch the application.
@@ -67,10 +70,17 @@ public class GUI extends JFrame {
 		lblNewLabel.setBounds(103, 406, 172, 34);
 		contentPane.add(lblNewLabel);
 
-		JSpinner spinnerAnzahlPers = new JSpinner();
-		spinnerAnzahlPers.setModel(new SpinnerNumberModel(1, 1, 10, 1));
-		spinnerAnzahlPers.setBounds(103, 436, 153, 26);
-		contentPane.add(spinnerAnzahlPers);
+//		JSpinner spinnerAnzahlPers = new JSpinner();
+//		spinnerAnzahlPers.setModel(new SpinnerNumberModel(1, 1, 10, 1));
+//		spinnerAnzahlPers.setBounds(103, 436, 153, 26);
+//		contentPane.add(spinnerAnzahlPers);
+
+		JComboBox comboBox = new JComboBox();
+		comboBox.setFont(new Font("Tahoma", Font.BOLD, 12));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+		comboBox.setMaximumRowCount(10);
+		comboBox.setBounds(103, 436, 153, 26);
+		contentPane.add(comboBox);
 
 		JLabel lblVon = new JLabel("Von");
 		lblVon.setFont(new Font("Tahoma", Font.BOLD, 18));
@@ -85,15 +95,16 @@ public class GUI extends JFrame {
 		contentPane.add(lblBis);
 
 		Date startDate = new Date();
-		JDateChooser dateVon = new JDateChooser();
+		dateVon = new JDateChooser();
 		dateVon.setBounds(495, 436, 135, 26);
-		dateVon.setDate(startDate);
+		dateVon.setMinSelectableDate(startDate);
 		contentPane.add(dateVon);
 
 
-		JDateChooser dateBis = new JDateChooser();
+
+		dateBis = new JDateChooser();
 		dateBis.setBounds(857, 436, 135, 26);
-		dateBis.setDate(startDate);
+		dateBis.setMinSelectableDate(GUI.dateVon.getDate());
 		contentPane.add(dateBis);
 
 		JButton btnNext = new JButton("Weiter");
@@ -103,8 +114,9 @@ public class GUI extends JFrame {
 				setVisible(false);
 				frame2 = new GUI2();
 				frame2.setVisible(true);
-				int value = Integer.valueOf(spinnerAnzahlPers.getValue().toString()).intValue();
-				if (value > 4) {
+//				int value = Integer.valueOf(spinnerAnzahlPers.getValue().toString()).intValue();
+				valueofPerson = Integer.valueOf(comboBox.getSelectedIndex());
+				if (valueofPerson > 4) {
 					frame2.btnZimmer1.setVisible(false);
 					frame2.btnZimmer2.setVisible(false);
 					frame2.btnZimmer3.setVisible(false);
