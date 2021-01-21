@@ -6,17 +6,20 @@ public class DataInput implements Constants{
 
     private final Scanner scanner = new Scanner(System.in);
 
-    private boolean hasWindow;
+    private static boolean hasWindow;
 
-    private ShipLogic myLogic;
+    private static ShipLogic myLogic;
     //private GUI myGUI;
 
     public DataInput()  {
         myLogic = new ShipLogic();
     }
+    public DataInput(ShipLogic s)  {
+        myLogic = s;
+    }
 
     //On the first page, the guests will choose the amount of passengers they'd like to go with and from when to when they will be there
-    public void checkInFirstPage(int passengerCount, Date dateOfArrival, Date dateOfDeparture) {
+    public static void checkInFirstPage(int passengerCount, Date dateOfArrival, Date dateOfDeparture) {
         TimeSpan timeSpan = new TimeSpan(dateOfArrival, dateOfDeparture);
         Cabin[] filteredForSecondPage = myLogic.filterBySize(myLogic.getCabins(), passengerCount);
        filteredForSecondPage = myLogic.filterByTimeSpan(filteredForSecondPage, timeSpan);
@@ -29,23 +32,13 @@ public class DataInput implements Constants{
     }
 
     //The second page decides what type of room the passenger can select based on the amount of people they are going to bring.
-    public void checkInSecondPage(int roomChoice, boolean hasWindow) {
-        this.hasWindow=hasWindow;
+    public static void checkInSecondPage(int roomChoice, boolean hasWindow_) {
+        hasWindow=hasWindow_;
     }
 
     //The third page is used to decide what kind of room the passenger will take. These options are limited based on *
-    public void checkInThirdPage() {
+    public static  void checkInThirdPage() {
     }
-
-    public void checkInFourthPage(boolean bookAnotherRoom) {
-     if(bookAnotherRoom) {
-     //    myGUI.firstPage();
-     }
-    }
-
-
-
-
 
 
     public void ConsoleCheckIn(ShipLogic myLogic) throws ParseException {
