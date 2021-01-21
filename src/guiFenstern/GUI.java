@@ -11,26 +11,15 @@ import java.awt.Font;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import javax.swing.JSpinner;
-import javax.swing.JTable;
-import javax.swing.JFormattedTextField.AbstractFormatter;
 
-import java.util.Calendar;
 import java.util.Date;
-import java.util.Properties;
-import com.toedter.calendar.JCalendar;
-import com.toedter.components.JSpinField;
 
-import sun.security.mscapi.CSignature.NONEwithRSA;
-
-import com.toedter.calendar.JDayChooser;
-import com.toedter.components.JLocaleChooser;
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SpinnerNumberModel;
-import javax.swing.JSlider;
-import javax.swing.JTextPane;
+
 
 public class GUI extends JFrame {
 

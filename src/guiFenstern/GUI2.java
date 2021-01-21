@@ -1,39 +1,39 @@
 package guiFenstern;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import java.awt.FlowLayout;
-import java.awt.GridLayout;
+
 import java.awt.Image;
 
 import javax.swing.JButton;
 import javax.swing.GrayFilter;
 import javax.swing.ImageIcon;
-import java.awt.GridBagLayout;
-import javax.swing.JRadioButton;
+
 import javax.swing.JCheckBox;
 import java.awt.Color;
-import javax.swing.border.CompoundBorder;
+
 import javax.swing.border.MatteBorder;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.LineBorder;
+import javax.swing.JToggleButton;
+import javax.swing.ButtonGroup;
 
 public class GUI2 extends JFrame {
 
 	private JPanel contentPane;
-	JButton btnZimmer1;
-	JButton btnZimmer2;
-	JButton btnZimmer3;
-	JButton btnZimmer4;
+	JToggleButton btnZimmer1;
+	JToggleButton btnZimmer2;
+	JToggleButton btnZimmer3;
+	JToggleButton btnZimmer4;
 	JLabel lblZimmer1;
 	JLabel lblZimmer2;
 	JLabel lblZimmer3;
@@ -42,6 +42,7 @@ public class GUI2 extends JFrame {
 	ImageIcon c2Gray;
 	ImageIcon c3Gray;
 	ImageIcon c4Gray;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
 
 	/**
 	 * Launch the application.
@@ -113,23 +114,23 @@ public class GUI2 extends JFrame {
 		contentPane.add(chckbxFenster);
 
 		lblZimmer1 = new JLabel("New label");
-		lblZimmer1.setBounds(30, 171, 251, 209);
+		lblZimmer1.setBounds(35, 174, 241, 200);
 		contentPane.add(lblZimmer1);
 
 		lblZimmer2 = new JLabel("New label");
-		lblZimmer2.setBounds(291, 171, 251, 209);
+		lblZimmer2.setBounds(296, 174, 241, 200);
 		contentPane.add(lblZimmer2);
 
 		lblZimmer3 = new JLabel("New label");
-		lblZimmer3.setBounds(30, 390, 251, 209);
+		lblZimmer3.setBounds(35, 395, 241, 200);
 		contentPane.add(lblZimmer3);
 
 		lblZimmer4 = new JLabel("New label");
-		lblZimmer4.setBounds(291, 390, 251, 209);
+		lblZimmer4.setBounds(295, 394, 241, 200);
 		contentPane.add(lblZimmer4);
 
 		JLabel lblSuite = new JLabel("New label");
-		lblSuite.setBounds(628, 261, 508, 257);
+		lblSuite.setBounds(634, 266, 498, 243);
 		contentPane.add(lblSuite);
 
 		// Bild Zimmer1
@@ -180,61 +181,42 @@ public class GUI2 extends JFrame {
 		lblNewLabel.setBounds(821, 226, 139, 25);
 		contentPane.add(lblNewLabel);
 
-		btnZimmer1 = new JButton("New button");
-		btnZimmer1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				chckbxFenster.setEnabled(true);
-				btnNext2.setEnabled(true);
-			}
-		});
-		btnZimmer1.setBounds(30, 169, 251, 211);
+		btnZimmer1 = new JToggleButton("New button");
+		buttonGroup.add(btnZimmer1);
+		btnZimmer1.setBorder(null);
+		btnZimmer1.setBounds(30, 169, 251, 209);
 		btnZimmer1.setOpaque(false);
 		btnZimmer1.setBackground(new Color(0, 0, 0, 0));
 		contentPane.add(btnZimmer1);
 
-		btnZimmer2 = new JButton("New button");
-		btnZimmer2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				chckbxFenster.setEnabled(true);
-				btnNext2.setEnabled(true);
-			}
-		});
-		btnZimmer2.setBounds(291, 171, 251, 209);
+		btnZimmer2 = new JToggleButton("New button");
+		buttonGroup.add(btnZimmer2);
+		btnZimmer2.setBorder(null);
+		btnZimmer2.setBounds(291, 169, 251, 211);
 		btnZimmer2.setOpaque(false);
 		btnZimmer2.setBackground(new Color(0, 0, 0, 0));
 		contentPane.add(btnZimmer2);
 
-		btnZimmer3 = new JButton("New button");
-		btnZimmer3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				chckbxFenster.setEnabled(true);
-				btnNext2.setEnabled(true);
-			}
-		});
+		btnZimmer3 = new JToggleButton("New button");
+		buttonGroup.add(btnZimmer3);
+		btnZimmer3.setBorder(null);
 		btnZimmer3.setBounds(30, 390, 251, 209);
 		btnZimmer3.setOpaque(false);
 		btnZimmer3.setBackground(new Color(0, 0, 0, 0));
 		contentPane.add(btnZimmer3);
 
-		btnZimmer4 = new JButton("New button");
-		btnZimmer4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				chckbxFenster.setEnabled(true);
-				btnNext2.setEnabled(true);
-			}
-		});
+		btnZimmer4 = new JToggleButton("New button");
+		buttonGroup.add(btnZimmer4);
+		btnZimmer4.setBorder(null);
 		btnZimmer4.setBounds(290, 389, 252, 210);
 		btnZimmer4.setOpaque(false);
 		btnZimmer4.setBackground(new Color(0, 0, 0, 0));
 		contentPane.add(btnZimmer4);
 
-		JButton btnSuite = new JButton("New button");
-		btnSuite.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				btnNext2.setEnabled(true);
-			}
-		});
-		btnSuite.setBounds(631, 265, 505, 253);
+		JToggleButton btnSuite = new JToggleButton("New button");
+		buttonGroup.add(btnSuite);
+		btnSuite.setBorder(null);
+		btnSuite.setBounds(631, 261, 505, 253);
 		btnSuite.setOpaque(false);
 		btnSuite.setBackground(new Color(0, 0, 0, 0));
 		contentPane.add(btnSuite);
