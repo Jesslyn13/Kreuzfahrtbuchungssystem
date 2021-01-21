@@ -1,4 +1,5 @@
 package guiFenstern;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -14,6 +15,7 @@ import java.awt.GridLayout;
 import java.awt.Image;
 
 import javax.swing.JButton;
+import javax.swing.GrayFilter;
 import javax.swing.ImageIcon;
 import java.awt.GridBagLayout;
 import javax.swing.JRadioButton;
@@ -28,6 +30,18 @@ import java.awt.event.ActionEvent;
 public class GUI2 extends JFrame {
 
 	private JPanel contentPane;
+	JButton btnZimmer1;
+	JButton btnZimmer2;
+	JButton btnZimmer3;
+	JButton btnZimmer4;
+	JLabel lblZimmer1;
+	JLabel lblZimmer2;
+	JLabel lblZimmer3;
+	JLabel lblZimmer4;
+	ImageIcon cGray;
+	ImageIcon c2Gray;
+	ImageIcon c3Gray;
+	ImageIcon c4Gray;
 
 	/**
 	 * Launch the application.
@@ -67,7 +81,6 @@ public class GUI2 extends JFrame {
 		lblZimmerauswahl.setFont(new Font("Tahoma", Font.BOLD, 37));
 		panelStart.add(lblZimmerauswahl);
 
-		// Zurück Button auf das erste Fenster
 		JButton btnBack = new JButton("Zur\u00FCck");
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -80,7 +93,6 @@ public class GUI2 extends JFrame {
 		btnBack.setBounds(10, 719, 123, 34);
 		contentPane.add(btnBack);
 
-		// Weiter Button auf das zweite Fenster
 		JButton btnNext2 = new JButton("Weiter");
 		btnNext2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -94,27 +106,25 @@ public class GUI2 extends JFrame {
 		btnNext2.setEnabled(false);
 		contentPane.add(btnNext2);
 
-
-		// Hier wird ausgewähl, ob man ein Fenster haben will oder nicht.
 		JCheckBox chckbxFenster = new JCheckBox("Fenster");
 		chckbxFenster.setFont(new Font("Tahoma", Font.BOLD, 18));
 		chckbxFenster.setBounds(30, 605, 95, 34);
 		chckbxFenster.setEnabled(false);
 		contentPane.add(chckbxFenster);
 
-		JLabel lblZimmer1 = new JLabel("New label");
+		lblZimmer1 = new JLabel("New label");
 		lblZimmer1.setBounds(30, 171, 251, 209);
 		contentPane.add(lblZimmer1);
 
-		JLabel lblZimmer2 = new JLabel("New label");
+		lblZimmer2 = new JLabel("New label");
 		lblZimmer2.setBounds(291, 171, 251, 209);
 		contentPane.add(lblZimmer2);
 
-		JLabel lblZimmer3 = new JLabel("New label");
+		lblZimmer3 = new JLabel("New label");
 		lblZimmer3.setBounds(30, 390, 251, 209);
 		contentPane.add(lblZimmer3);
 
-		JLabel lblZimmer4 = new JLabel("New label");
+		lblZimmer4 = new JLabel("New label");
 		lblZimmer4.setBounds(291, 390, 251, 209);
 		contentPane.add(lblZimmer4);
 
@@ -126,28 +136,36 @@ public class GUI2 extends JFrame {
 		ImageIcon a = new ImageIcon(GUI2.class.getResource("/bilder/Zimmer1.jpg"));
 		Image b = a.getImage();
 		Image newimg = b.getScaledInstance(lblZimmer1.getWidth(), lblZimmer1.getHeight(), Image.SCALE_SMOOTH);
+		Image grayImage = GrayFilter.createDisabledImage(newimg);
 		ImageIcon c = new ImageIcon(newimg);
+		cGray = new ImageIcon(grayImage);
 		lblZimmer1.setIcon(c);
 
 		// Bild Zimmer2
 		ImageIcon a2 = new ImageIcon(GUI2.class.getResource("/bilder/Zimmer2.png"));
 		Image b2 = a2.getImage();
-		Image newimg2 = b2.getScaledInstance(lblZimmer1.getWidth(), lblZimmer1.getHeight(), Image.SCALE_SMOOTH);
+		Image newimg2 = b2.getScaledInstance(lblZimmer2.getWidth(), lblZimmer2.getHeight(), Image.SCALE_SMOOTH);
+		Image grayImage2 = GrayFilter.createDisabledImage(newimg2);
 		ImageIcon c2 = new ImageIcon(newimg2);
+		c2Gray = new ImageIcon(grayImage2);
 		lblZimmer2.setIcon(c2);
 
 		// Bild Zimmer3
 		ImageIcon a3 = new ImageIcon(GUI2.class.getResource("/bilder/Zimmer3.jpg"));
 		Image b3 = a3.getImage();
-		Image newimg3 = b3.getScaledInstance(lblZimmer1.getWidth(), lblZimmer1.getHeight(), Image.SCALE_SMOOTH);
+		Image newimg3 = b3.getScaledInstance(lblZimmer3.getWidth(), lblZimmer3.getHeight(), Image.SCALE_SMOOTH);
+		Image grayImage3 = GrayFilter.createDisabledImage(newimg3);
 		ImageIcon c3 = new ImageIcon(newimg3);
+		c3Gray = new ImageIcon(grayImage3);
 		lblZimmer3.setIcon(c3);
 
 		// Bild Zimmer4
 		ImageIcon a4 = new ImageIcon(GUI2.class.getResource("/bilder/Zimmer4.png"));
 		Image b4 = a4.getImage();
-		Image newimg4 = b4.getScaledInstance(lblZimmer1.getWidth(), lblZimmer1.getHeight(), Image.SCALE_SMOOTH);
+		Image newimg4 = b4.getScaledInstance(lblZimmer4.getWidth(), lblZimmer4.getHeight(), Image.SCALE_SMOOTH);
+		Image grayImage4 = GrayFilter.createDisabledImage(newimg4);
 		ImageIcon c4 = new ImageIcon(newimg4);
+		c4Gray = new ImageIcon(grayImage4);
 		lblZimmer4.setIcon(c4);
 
 		// Bild Suite
@@ -162,9 +180,7 @@ public class GUI2 extends JFrame {
 		lblNewLabel.setBounds(821, 226, 139, 25);
 		contentPane.add(lblNewLabel);
 
-
-		// Button für Zimmer mit 1 person
-		JButton btnZimmer1 = new JButton("New button");
+		btnZimmer1 = new JButton("New button");
 		btnZimmer1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				chckbxFenster.setEnabled(true);
@@ -176,8 +192,7 @@ public class GUI2 extends JFrame {
 		btnZimmer1.setBackground(new Color(0, 0, 0, 0));
 		contentPane.add(btnZimmer1);
 
-		// Button für Zimmer mit 2 personen
-		JButton btnZimmer2 = new JButton("New button");
+		btnZimmer2 = new JButton("New button");
 		btnZimmer2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				chckbxFenster.setEnabled(true);
@@ -189,8 +204,7 @@ public class GUI2 extends JFrame {
 		btnZimmer2.setBackground(new Color(0, 0, 0, 0));
 		contentPane.add(btnZimmer2);
 
-		// Button für Zimmer mit 3 personen
-		JButton btnZimmer3 = new JButton("New button");
+		btnZimmer3 = new JButton("New button");
 		btnZimmer3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				chckbxFenster.setEnabled(true);
@@ -202,8 +216,7 @@ public class GUI2 extends JFrame {
 		btnZimmer3.setBackground(new Color(0, 0, 0, 0));
 		contentPane.add(btnZimmer3);
 
-		// Button für Zimmer mit 4 personen
-		JButton btnZimmer4 = new JButton("New button");
+		btnZimmer4 = new JButton("New button");
 		btnZimmer4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				chckbxFenster.setEnabled(true);
@@ -215,7 +228,6 @@ public class GUI2 extends JFrame {
 		btnZimmer4.setBackground(new Color(0, 0, 0, 0));
 		contentPane.add(btnZimmer4);
 
-		// Button für Suite
 		JButton btnSuite = new JButton("New button");
 		btnSuite.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

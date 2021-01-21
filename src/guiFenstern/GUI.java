@@ -11,19 +11,36 @@ import java.awt.Font;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import javax.swing.JSpinner;
+import javax.swing.JTable;
+import javax.swing.JFormattedTextField.AbstractFormatter;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Properties;
+import com.toedter.calendar.JCalendar;
+import com.toedter.components.JSpinField;
+
+import sun.security.mscapi.CSignature.NONEwithRSA;
+
+import com.toedter.calendar.JDayChooser;
+import com.toedter.components.JLocaleChooser;
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.JSlider;
+import javax.swing.JTextPane;
 
 public class GUI extends JFrame {
 
 	private JPanel contentPane;
+	GUI2 frame2;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void start() {
+	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -61,7 +78,6 @@ public class GUI extends JFrame {
 		lblNewLabel.setBounds(103, 406, 172, 34);
 		contentPane.add(lblNewLabel);
 
-		//Hier wird die Anzahl der Personon eingegeben
 		JSpinner spinnerAnzahlPers = new JSpinner();
 		spinnerAnzahlPers.setModel(new SpinnerNumberModel(1, 1, 10, 1));
 		spinnerAnzahlPers.setBounds(103, 436, 153, 26);
@@ -79,29 +95,36 @@ public class GUI extends JFrame {
 		lblBis.setBounds(857, 406, 172, 34);
 		contentPane.add(lblBis);
 
-		// Datum ende der Fahrt
-		JDateChooser dateBis = new JDateChooser();
-		dateBis.setBounds(857, 436, 135, 26);
-		contentPane.add(dateBis);
-
-		// Datum anfang der Fahrt
+		Date startDate = new Date();
 		JDateChooser dateVon = new JDateChooser();
 		dateVon.setBounds(495, 436, 135, 26);
+		dateVon.setDate(startDate);
 		contentPane.add(dateVon);
 
-		// hier muss nach was geändert werden,sodass man nicht auf die nächste Seite kommen, wenn die Felder leer sind
+
+		JDateChooser dateBis = new JDateChooser();
+		dateBis.setBounds(857, 436, 135, 26);
+		dateBis.setDate(startDate);
+		contentPane.add(dateBis);
+
 		JButton btnNext = new JButton("Weiter");
-		btnNext.setEnabled(false);
-		if (spinnerAnzahlPers != null && dateBis != null) {
-			btnNext.setEnabled(true);
-		}
 
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				GUI2 frame = new GUI2();
-				frame.setVisible(true);
-
+				frame2 = new GUI2();
+				frame2.setVisible(true);
+				int value = Integer.valueOf(spinnerAnzahlPers.getValue().toString()).intValue();
+				if (value > 4) {
+					frame2.btnZimmer1.setVisible(false);
+					frame2.btnZimmer2.setVisible(false);
+					frame2.btnZimmer3.setVisible(false);
+					frame2.btnZimmer4.setVisible(false);
+					frame2.lblZimmer1.setIcon(frame2.cGray);
+					frame2.lblZimmer2.setIcon(frame2.c2Gray);
+					frame2.lblZimmer3.setIcon(frame2.c3Gray);
+					frame2.lblZimmer4.setIcon(frame2.c4Gray);
+				}
 
 			}
 		});
