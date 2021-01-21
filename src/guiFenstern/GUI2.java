@@ -182,6 +182,12 @@ public class GUI2 extends JFrame {
 		contentPane.add(lblNewLabel);
 
 		btnZimmer1 = new JToggleButton("New button");
+		btnZimmer1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				chckbxFenster.setEnabled(true);
+				btnNext2.setEnabled(true);
+			}
+		});
 		buttonGroup.add(btnZimmer1);
 		btnZimmer1.setBorder(null);
 		btnZimmer1.setBounds(30, 169, 251, 209);
@@ -190,6 +196,12 @@ public class GUI2 extends JFrame {
 		contentPane.add(btnZimmer1);
 
 		btnZimmer2 = new JToggleButton("New button");
+		btnZimmer2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				chckbxFenster.setEnabled(true);
+				btnNext2.setEnabled(true);
+			}
+		});
 		buttonGroup.add(btnZimmer2);
 		btnZimmer2.setBorder(null);
 		btnZimmer2.setBounds(291, 169, 251, 211);
@@ -198,6 +210,12 @@ public class GUI2 extends JFrame {
 		contentPane.add(btnZimmer2);
 
 		btnZimmer3 = new JToggleButton("New button");
+		btnZimmer3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				chckbxFenster.setEnabled(true);
+				btnNext2.setEnabled(true);
+			}
+		});
 		buttonGroup.add(btnZimmer3);
 		btnZimmer3.setBorder(null);
 		btnZimmer3.setBounds(30, 390, 251, 209);
@@ -206,6 +224,12 @@ public class GUI2 extends JFrame {
 		contentPane.add(btnZimmer3);
 
 		btnZimmer4 = new JToggleButton("New button");
+		btnZimmer4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				chckbxFenster.setEnabled(true);
+				btnNext2.setEnabled(true);
+			}
+		});
 		buttonGroup.add(btnZimmer4);
 		btnZimmer4.setBorder(null);
 		btnZimmer4.setBounds(290, 389, 252, 210);
@@ -214,6 +238,14 @@ public class GUI2 extends JFrame {
 		contentPane.add(btnZimmer4);
 
 		JToggleButton btnSuite = new JToggleButton("New button");
+		btnSuite.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				chckbxFenster.setEnabled(false);
+				btnNext2.setEnabled(true);
+			}
+
+		});
 		buttonGroup.add(btnSuite);
 		btnSuite.setBorder(null);
 		btnSuite.setBounds(631, 261, 505, 253);
