@@ -20,6 +20,12 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.event.AncestorListener;
+import javax.swing.event.AncestorEvent;
+import java.beans.PropertyChangeListener;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.beans.PropertyChangeEvent;
 
 public class GUI extends JFrame {
 
@@ -75,7 +81,7 @@ public class GUI extends JFrame {
 //		spinnerAnzahlPers.setBounds(103, 436, 153, 26);
 //		contentPane.add(spinnerAnzahlPers);
 
-		JComboBox comboBox = new JComboBox();
+		JComboBox comboBox = new JComboBox<Object>();
 		comboBox.setFont(new Font("Tahoma", Font.BOLD, 12));
 		comboBox.setModel(new DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
 		comboBox.setMaximumRowCount(10);
@@ -104,8 +110,15 @@ public class GUI extends JFrame {
 
 		dateBis = new JDateChooser();
 		dateBis.setBounds(857, 436, 135, 26);
-		dateBis.setMinSelectableDate(GUI.dateVon.getDate());
 		contentPane.add(dateBis);
+
+
+
+		dateVon.addPropertyChangeListener(new PropertyChangeListener() {
+			public void propertyChange(PropertyChangeEvent evt) {
+				dateBis.setMinSelectableDate(dateVon.getDate());
+			}
+		});
 
 		JButton btnNext = new JButton("Weiter");
 
