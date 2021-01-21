@@ -20,20 +20,19 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.event.AncestorListener;
-import javax.swing.event.AncestorEvent;
+
 import java.beans.PropertyChangeListener;
-import java.time.LocalDate;
-import java.time.ZoneId;
+
 import java.beans.PropertyChangeEvent;
 
 public class GUI extends JFrame {
 
 	private JPanel contentPane;
 	GUI2 frame2;
-	static int valueofPerson;
+	int valueofPerson;
 	static JDateChooser dateVon;
 	static JDateChooser dateBis;
+	static JComboBox comboBox;
 
 	/**
 	 * Launch the application.
@@ -76,14 +75,10 @@ public class GUI extends JFrame {
 		lblNewLabel.setBounds(103, 406, 172, 34);
 		contentPane.add(lblNewLabel);
 
-//		JSpinner spinnerAnzahlPers = new JSpinner();
-//		spinnerAnzahlPers.setModel(new SpinnerNumberModel(1, 1, 10, 1));
-//		spinnerAnzahlPers.setBounds(103, 436, 153, 26);
-//		contentPane.add(spinnerAnzahlPers);
-
-		JComboBox comboBox = new JComboBox<Object>();
+		comboBox = new JComboBox();
 		comboBox.setFont(new Font("Tahoma", Font.BOLD, 12));
 		comboBox.setModel(new DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+		comboBox.setSelectedIndex(0);
 		comboBox.setMaximumRowCount(10);
 		comboBox.setBounds(103, 436, 153, 26);
 		contentPane.add(comboBox);
@@ -106,13 +101,9 @@ public class GUI extends JFrame {
 		dateVon.setMinSelectableDate(startDate);
 		contentPane.add(dateVon);
 
-
-
 		dateBis = new JDateChooser();
 		dateBis.setBounds(857, 436, 135, 26);
 		contentPane.add(dateBis);
-
-
 
 		dateVon.addPropertyChangeListener(new PropertyChangeListener() {
 			public void propertyChange(PropertyChangeEvent evt) {
@@ -130,10 +121,10 @@ public class GUI extends JFrame {
 //				int value = Integer.valueOf(spinnerAnzahlPers.getValue().toString()).intValue();
 				valueofPerson = Integer.valueOf(comboBox.getSelectedIndex());
 				if (valueofPerson > 4) {
-					frame2.btnZimmer1.setVisible(false);
-					frame2.btnZimmer2.setVisible(false);
-					frame2.btnZimmer3.setVisible(false);
-					frame2.btnZimmer4.setVisible(false);
+					GUI2.btnZimmer1.setVisible(false);
+					GUI2.btnZimmer2.setVisible(false);
+					GUI2.btnZimmer3.setVisible(false);
+					GUI2.btnZimmer4.setVisible(false);
 					frame2.lblZimmer1.setIcon(frame2.cGray);
 					frame2.lblZimmer2.setIcon(frame2.c2Gray);
 					frame2.lblZimmer3.setIcon(frame2.c3Gray);

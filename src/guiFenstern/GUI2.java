@@ -30,10 +30,10 @@ import javax.swing.ButtonGroup;
 public class GUI2 extends JFrame {
 
 	private JPanel contentPane;
-	JToggleButton btnZimmer1;
-	JToggleButton btnZimmer2;
-	JToggleButton btnZimmer3;
-	JToggleButton btnZimmer4;
+	static JToggleButton btnZimmer1;
+	static JToggleButton btnZimmer2;
+	static JToggleButton btnZimmer3;
+	static JToggleButton btnZimmer4;
 	JLabel lblZimmer1;
 	JLabel lblZimmer2;
 	JLabel lblZimmer3;
@@ -42,7 +42,9 @@ public class GUI2 extends JFrame {
 	ImageIcon c2Gray;
 	ImageIcon c3Gray;
 	ImageIcon c4Gray;
-	private final ButtonGroup buttonGroup = new ButtonGroup();
+	static final ButtonGroup buttonGroup = new ButtonGroup();
+	static JToggleButton btnSuite;
+	static JCheckBox chckbxFenster;
 
 	/**
 	 * Launch the application.
@@ -107,7 +109,7 @@ public class GUI2 extends JFrame {
 		btnNext2.setEnabled(false);
 		contentPane.add(btnNext2);
 
-		JCheckBox chckbxFenster = new JCheckBox("Fenster");
+		chckbxFenster = new JCheckBox("Fenster");
 		chckbxFenster.setFont(new Font("Tahoma", Font.BOLD, 18));
 		chckbxFenster.setBounds(30, 605, 95, 34);
 		chckbxFenster.setEnabled(false);
@@ -237,7 +239,7 @@ public class GUI2 extends JFrame {
 		btnZimmer4.setBackground(new Color(0, 0, 0, 0));
 		contentPane.add(btnZimmer4);
 
-		JToggleButton btnSuite = new JToggleButton("New button");
+		btnSuite = new JToggleButton("New button");
 		btnSuite.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 

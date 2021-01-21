@@ -24,6 +24,7 @@ public class GUI3 extends JFrame {
 	private JTextField tfPreis;
 	private JTextField tfPersonenanzahl;
 
+
 	/**
 	 * Launch the application.
 	 */
@@ -114,9 +115,33 @@ public class GUI3 extends JFrame {
 		tfZimmer.setFont(new Font("Tahoma", Font.BOLD, 20));
 		tfZimmer.setBorder(null);
 		tfZimmer.setEditable(false);
-		tfZimmer.setBounds(212, 241, 152, 28);
+		tfZimmer.setBounds(212, 241, 410, 28);
 		contentPane.add(tfZimmer);
 		tfZimmer.setColumns(10);
+
+		if (GUI2.btnZimmer1.isSelected() || GUI2.chckbxFenster.isSelected()) {
+			tfZimmer.setText("EinzelZimmer mit Fenster");
+		}else if (GUI2.btnZimmer2.isSelected() || GUI2.chckbxFenster.isSelected()) {
+			tfZimmer.setText("Doppelzimmer mit Fentser");
+		}else if (GUI2.btnZimmer3.isSelected() || GUI2.chckbxFenster.isSelected()) {
+			tfZimmer.setText("DreibettZimmer mit Fenster");
+		}else if (GUI2.btnZimmer4.isSelected() || GUI2.chckbxFenster.isSelected()) {
+			tfZimmer.setText("VierbettZimmer mit Fenster");
+		}else if (GUI2.btnZimmer1.isSelected()) {
+			tfZimmer.setText("EinzelZimmer");
+		}else if (GUI2.btnZimmer2.isSelected()) {
+			tfZimmer.setText("Doppelzimmer");
+		}else if (GUI2.btnZimmer3.isSelected()) {
+			tfZimmer.setText("DreibettZimmer");
+		}else if (GUI2.btnZimmer4.isSelected()) {
+			tfZimmer.setText("VierbettZimmer");
+		}else if (GUI2.btnSuite.isSelected()) {
+			tfZimmer.setText("Präsidenten Suite");
+		}
+
+
+
+
 
 		// Datum Textfield (Anfang der Fahrt)
 		SimpleDateFormat dcn = new SimpleDateFormat("yyyy-MM-dd");
@@ -126,7 +151,7 @@ public class GUI3 extends JFrame {
 		tfVonDatum.setBorder(null);
 		tfVonDatum.setEditable(false);
 		tfVonDatum.setColumns(10);
-		tfVonDatum.setBounds(212, 278, 152, 28);
+		tfVonDatum.setBounds(212, 279, 152, 28);
 		contentPane.add(tfVonDatum);
 
 		// Datum Textfield (Ende der Fahrt)
@@ -137,7 +162,7 @@ public class GUI3 extends JFrame {
 		tfBisDatum.setBorder(null);
 		tfBisDatum.setEditable(false);
 		tfBisDatum.setColumns(10);
-		tfBisDatum.setBounds(212, 316, 152, 28);
+		tfBisDatum.setBounds(212, 317, 152, 28);
 		contentPane.add(tfBisDatum);
 
 		// Textfield für den Preis
@@ -151,16 +176,16 @@ public class GUI3 extends JFrame {
 
 		JLabel lblAnzahlpersonen = new JLabel("Personenanzahl:");
 		lblAnzahlpersonen.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblAnzahlpersonen.setBounds(27, 208, 175, 34);
+		lblAnzahlpersonen.setBounds(27, 202, 175, 28);
 		contentPane.add(lblAnzahlpersonen);
 
-		String stringValueofPerson = "" + GUI.valueofPerson;
-		tfPersonenanzahl = new JTextField(stringValueofPerson);
+//		String stringValueofPerson = "" + GUI.valueofPerson + 1;
+		tfPersonenanzahl = new JTextField((String) GUI.comboBox.getSelectedItem());
 		tfPersonenanzahl.setFont(new Font("Tahoma", Font.BOLD, 20));
 		tfPersonenanzahl.setEditable(false);
 		tfPersonenanzahl.setColumns(10);
 		tfPersonenanzahl.setBorder(null);
-		tfPersonenanzahl.setBounds(213, 212, 152, 28);
+		tfPersonenanzahl.setBounds(212, 203, 152, 28);
 		contentPane.add(tfPersonenanzahl);
 	}
 }
