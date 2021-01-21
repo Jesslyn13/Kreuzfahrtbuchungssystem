@@ -84,7 +84,6 @@ public class GUI3 extends JFrame {
 		JButton btnBack2 = new JButton("Z\u00FCruck");
 		btnBack2.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnBack2.setBounds(10, 719, 123, 34);
-		JButton btnBack2 = new JButton("Z\u00FCruck");
 		btnBack2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);

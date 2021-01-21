@@ -63,6 +63,7 @@ public class GUI extends JFrame {
 
 		//Hier wird die Anzahl der Personon eingegeben
 		JSpinner spinnerAnzahlPers = new JSpinner();
+		spinnerAnzahlPers.setModel(new SpinnerNumberModel(1, 1, 10, 1));
 		spinnerAnzahlPers.setBounds(103, 436, 153, 26);
 		contentPane.add(spinnerAnzahlPers);
 
