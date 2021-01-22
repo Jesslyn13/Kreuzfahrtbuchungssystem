@@ -24,7 +24,7 @@ import javax.swing.DefaultComboBoxModel;
 import java.beans.PropertyChangeListener;
 
 import java.beans.PropertyChangeEvent;
-
+//kommentar
 public class GUI extends JFrame {
 
 	private JPanel contentPane;
