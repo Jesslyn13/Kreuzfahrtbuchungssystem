@@ -4,6 +4,9 @@ package guiFenstern;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import logic.Cabin;
+import logic.TimeSpan;
+
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.FlowLayout;
@@ -23,6 +26,7 @@ public class GUI3 extends JFrame {
 	private JTextField tfBisDatum;
 	private JTextField tfPreis;
 	private JTextField tfPersonenanzahl;
+
 
 
 	/**
@@ -167,7 +171,20 @@ public class GUI3 extends JFrame {
 		contentPane.add(tfBisDatum);
 
 		// Textfield für den Preis
-		tfPreis = new JTextField();
+		int roomSize=0;
+		if(GUI2.btnZimmer1.isSelected()) roomSize=1;
+		if(GUI2.btnZimmer2.isSelected()) roomSize=2;
+		if(GUI2.btnZimmer3.isSelected()) roomSize=3;
+		if(GUI2.btnZimmer4.isSelected()) roomSize=4;
+		if(GUI2.btnSuite.isSelected()) roomSize=10;
+
+
+		System.out.println(roomSize);
+
+		Cabin c = new Cabin(GUI2.getWindowChecked(),roomSize);
+		TimeSpan t = new TimeSpan(GUI.dateVon.getDate(),GUI.dateBis.getDate());
+		int cost = c.calculateTotalCost(t);
+		tfPreis = new JTextField(""+cost);
 		tfPreis.setFont(new Font("Tahoma", Font.BOLD, 20));
 		tfPreis.setBorder(null);
 		tfPreis.setEditable(false);

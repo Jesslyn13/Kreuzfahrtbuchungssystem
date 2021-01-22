@@ -1,3 +1,5 @@
+package logic;
+
 public class ShipLogic{
     static Cabin[] myShip = new Cabin[Constants.TOTAL_CABIN_COUNT];
 

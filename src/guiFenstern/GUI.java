@@ -35,8 +35,8 @@ public class GUI extends JFrame {
 	static JComboBox comboBox;
 
 	/**
-	 * Launch the application.
-	 */
+	  * Launch the application.
+	  */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -51,8 +51,8 @@ public class GUI extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
-	 */
+	  * Create the frame.
+	  */
 	public  GUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1224, 800);

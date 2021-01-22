@@ -1,3 +1,7 @@
+package logic;
+
+import guiFenstern.GUI2;
+
 import java.text.ParseException;
 import java.util.Date;
 import java.util.Scanner;
@@ -20,14 +24,15 @@ public class DataInput implements Constants{
 
     //On the first page, the guests will choose the amount of passengers they'd like to go with and from when to when they will be there
     public static void checkInFirstPage(int passengerCount, Date dateOfArrival, Date dateOfDeparture) {
-        TimeSpan timeSpan = new TimeSpan(dateOfArrival, dateOfDeparture);
-        Cabin[] filteredForSecondPage = myLogic.filterBySize(myLogic.getCabins(), passengerCount);
+       TimeSpan timeSpan = new TimeSpan(dateOfArrival, dateOfDeparture);
+       Cabin[] filteredForSecondPage = myLogic.filterBySize(myLogic.getCabins(), passengerCount);
        filteredForSecondPage = myLogic.filterByTimeSpan(filteredForSecondPage, timeSpan);
 
-       boolean[] containsCabinTypes = new boolean[CABIN_TYPES.length];
-       for(int i = 0;i<CABIN_TYPES.length;i++) {
-            containsCabinTypes[i] = myLogic.containsCabinType(CABIN_TYPES[i]);
-       }
+       //boolean[] containsCabinTypes = new boolean[CABIN_TYPES.length];
+       //for(int i = 0;i<CABIN_TYPES.length;i++) {
+       //     containsCabinTypes[i] = myLogic.containsCabinType(CABIN_TYPES[i]);
+       //}
+       new GUI2();
       // myGUI.secondPage(containsCabinTypes);
     }
 
@@ -36,13 +41,12 @@ public class DataInput implements Constants{
         hasWindow=hasWindow_;
     }
 
-    //The third page is used to decide what kind of room the passenger will take. These options are limited based on *
+    //The third page is used to decide what kind of room the passenger will take. These options are limited based on
     public static  void checkInThirdPage() {
     }
 
 
     public void ConsoleCheckIn(ShipLogic myLogic) throws ParseException {
-        //TODO: add menu States and return Button
 
         boolean booking = true;
         Cabin[] filteredList;

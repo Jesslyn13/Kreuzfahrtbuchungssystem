@@ -1,3 +1,5 @@
+package logic;
+
 public class CabinType {
    private final int capacity;
    private final int count;

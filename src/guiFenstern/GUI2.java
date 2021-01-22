@@ -30,6 +30,7 @@ import javax.swing.ButtonGroup;
 public class GUI2 extends JFrame {
 
 	private JPanel contentPane;
+	static private boolean windowChecked=false;
 	static JToggleButton btnZimmer1;
 	static JToggleButton btnZimmer2;
 	static JToggleButton btnZimmer3;
@@ -62,9 +63,11 @@ public class GUI2 extends JFrame {
 		});
 	}
 
-	/**
+	/***
 	 * Create the frame.
 	 */
+	public static boolean getWindowChecked() {return windowChecked;}
+
 	public GUI2() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1224, 800);
@@ -114,6 +117,12 @@ public class GUI2 extends JFrame {
 		chckbxFenster.setBounds(30, 605, 95, 34);
 		chckbxFenster.setEnabled(false);
 		contentPane.add(chckbxFenster);
+		chckbxFenster.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				windowChecked=!windowChecked;
+			}
+
+		});
 
 		lblZimmer1 = new JLabel("New label");
 		lblZimmer1.setBounds(35, 174, 241, 200);
