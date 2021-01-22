@@ -53,7 +53,7 @@ public class GUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public GUI() {
+	public  GUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1224, 800);
 		contentPane = new JPanel();
@@ -118,9 +118,23 @@ public class GUI extends JFrame {
 				setVisible(false);
 				frame2 = new GUI2();
 				frame2.setVisible(true);
-//				int value = Integer.valueOf(spinnerAnzahlPers.getValue().toString()).intValue();
-				valueofPerson = Integer.valueOf(comboBox.getSelectedIndex());
-				if (valueofPerson > 4) {
+				valueofPerson = Integer.valueOf((String) comboBox.getSelectedItem());
+				if (valueofPerson == 2) {
+					GUI2.btnZimmer1.setVisible(false);
+					frame2.lblZimmer1.setIcon(frame2.cGray);
+				}else if (valueofPerson == 3) {
+					GUI2.btnZimmer1.setVisible(false);
+					GUI2.btnZimmer2.setVisible(false);
+					frame2.lblZimmer1.setIcon(frame2.cGray);
+					frame2.lblZimmer2.setIcon(frame2.c2Gray);
+				}else if (valueofPerson == 4) {
+					GUI2.btnZimmer1.setVisible(false);
+					GUI2.btnZimmer2.setVisible(false);
+					GUI2.btnZimmer3.setVisible(false);
+					frame2.lblZimmer1.setIcon(frame2.cGray);
+					frame2.lblZimmer2.setIcon(frame2.c2Gray);
+					frame2.lblZimmer3.setIcon(frame2.c3Gray);
+				}	else if (valueofPerson > 4) {
 					GUI2.btnZimmer1.setVisible(false);
 					GUI2.btnZimmer2.setVisible(false);
 					GUI2.btnZimmer3.setVisible(false);

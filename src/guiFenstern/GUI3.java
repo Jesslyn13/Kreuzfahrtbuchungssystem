@@ -119,25 +119,26 @@ public class GUI3 extends JFrame {
 		contentPane.add(tfZimmer);
 		tfZimmer.setColumns(10);
 
-		if (GUI2.btnZimmer1.isSelected() || GUI2.chckbxFenster.isSelected()) {
-			tfZimmer.setText("EinzelZimmer mit Fenster");
-		}else if (GUI2.btnZimmer2.isSelected() || GUI2.chckbxFenster.isSelected()) {
-			tfZimmer.setText("Doppelzimmer mit Fentser");
-		}else if (GUI2.btnZimmer3.isSelected() || GUI2.chckbxFenster.isSelected()) {
-			tfZimmer.setText("DreibettZimmer mit Fenster");
-		}else if (GUI2.btnZimmer4.isSelected() || GUI2.chckbxFenster.isSelected()) {
-			tfZimmer.setText("VierbettZimmer mit Fenster");
-		}else if (GUI2.btnZimmer1.isSelected()) {
-			tfZimmer.setText("EinzelZimmer");
-		}else if (GUI2.btnZimmer2.isSelected()) {
-			tfZimmer.setText("Doppelzimmer");
-		}else if (GUI2.btnZimmer3.isSelected()) {
-			tfZimmer.setText("DreibettZimmer");
-		}else if (GUI2.btnZimmer4.isSelected()) {
-			tfZimmer.setText("VierbettZimmer");
-		}else if (GUI2.btnSuite.isSelected()) {
-			tfZimmer.setText("Präsidenten Suite");
-		}
+
+		//		if (GUI2.btnZimmer1.isSelected() || GUI2.chckbxFenster.isSelected()) {
+//			tfZimmer.setText("EinzelZimmer mit Fenster");
+//		} else if (GUI2.btnZimmer2.isSelected() || GUI2.chckbxFenster.isSelected()) {
+//			tfZimmer.setText("Doppelzimmer mit Fentser");
+//		} else if (GUI2.btnZimmer3.isSelected() || GUI2.chckbxFenster.isSelected()) {
+//			tfZimmer.setText("DreibettZimmer mit Fenster");
+//		} else if (GUI2.btnZimmer4.isSelected() || GUI2.chckbxFenster.isSelected()) {
+//			tfZimmer.setText("VierbettZimmer mit Fenster");
+//		} else if (GUI2.btnZimmer1.isSelected() || !GUI2.chckbxFenster.isSelected()) {
+//			tfZimmer.setText("EinzelZimmer");
+//		} else if (GUI2.btnZimmer2.isSelected() || !GUI2.chckbxFenster.isSelected()) {
+//			tfZimmer.setText("Doppelzimmer");
+//		} else if (GUI2.btnZimmer3.isSelected() || !GUI2.chckbxFenster.isSelected()) {
+//			tfZimmer.setText("DreibettZimmer");
+//		} else if (GUI2.btnZimmer4.isSelected() || !GUI2.chckbxFenster.isSelected()) {
+//			tfZimmer.setText("VierbettZimmer");
+//		} else if (GUI2.btnSuite.isSelected()) {
+//			tfZimmer.setText("Präsidenten Suite");
+//		}
 
 
 
